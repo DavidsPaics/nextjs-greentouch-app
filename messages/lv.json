@@ -189,7 +189,7 @@
     "header": {
       "title": "Laipni lūdzam GreenTouch!"
     },
-    "heroSection" : {
+    "heroSection": {
       "heroText": "GreenTouch mērķis ir palīdzēt jums veidot saikni ar dabu, veicināt jūsu labbūtību un veidot ilgtspējīgāku nākotni, izmantojot interaktīvus digitālos rīkus un praktisku pieredzi. Mūsu Erasmus+ sadarbības partnerības projekts \"GreenTouch: Ekoloģiskās domāšanas attīstīšana augstākās izglītības nākotnei\" (projekta ID: 2023-1-LV01-KA220-HED-000154847) apvieno vairākas universitātes un ekspertus Eiropā, lai radītu inovatīvus risinājumus, kā integrēt dabu izglītībā un ikdienas dzīvē.",
       "card1": {
         "title": "Kas mēs esam?",
@@ -235,27 +235,24 @@
         "title": "Atgādinājums!",
         "message": "Piesakoties savā kontā, jūs varat piekļūt visām septiņām sesijām, lai piedalītos."
       },
-      "releaseDateStatus": {
-        "previousSessionsCompletionRequired": "Iepriekšējās sesijas ir jāpabeidz, lai atbloķētu jaunas sesijas.",
-        "releaseDate": "Izlaišanas datums: ",
-        "comingSoon": "Drīz būšu",
-        "needsToBeSet": "Ir jānosaka izlaišanas datums"
+      "unlockStatus": {
+        "previousSessionsCompletionRequired": "Lai atbloķētu jaunas sesijas, jums ir jāpabeidz iepriekšējās.",
+        "unlocksOn": "Sesija kļūs pieejama {date}"
       },
       "sessionStatus": {
         "completed": "Pabeigta",
         "inProgress": "Notiek",
-        "toBeCompleted": "Jāaizpilda"
+        "toBeCompleted": "Nav izpildīts",
+        "availableIn": "{hours, plural, zero {Sesija būs pieejama pēc # stundām} one {Sesija būs pieejama pēc # stundas} other {Sesija būs pieejama pēc # stundām}}"
       },
-      "setReleaseDateDialog": {
-        "title": "Iestatiet izlaišanas datumu",
-        "description1": "Izvēlieties datumu un laiku, kad ",
-        "description2": " būtu jākļūst pieejamam.",
-        "labelDate": "Datums",
-        "pickDate": "Izvēlieties datumu",
-        "labelTime": "Laiks",
+      "setUnlockDelayDialog": {
+        "title": "Iestatīt atbloķēšanas laiku",
+        "description1": "Izvēlieties, cik stundas pēc iepriekšējās sesijas pabeigšanas ",
+        "description2": " būtu jākļūst pieejamai.",
+        "labelHours": "Stundas",
         "actionButton": "Saglabāt",
-        "successMessage": "Veiksmīgi iestatīts izlaišanas datums.",
-        "errorMessage": "Iestatot izlaišanas datumu, radās kļūda. Lūdzu, mēģiniet vēlreiz."
+        "successMessage": "Atbloķēšanas laiks veiksmīgi iestatīta.",
+        "errorMessage": "Iestatot atbloķēšanas laiku, radās kļūda. Lūdzu, mēģiniet vēlreiz."
       },
       "notAvailable": {
         "title": "Šī sesija vēl nav pieejama",
@@ -302,15 +299,15 @@
         "cardSubtitle": "SLĒGTIE JAUTĀJUMI",
         "cardSubdescription1": "Cik reizes šīs sesijas laikā tu veltīji laiku ...",
         "frequencyScale": {
-            "never": "Nekad",
-            "once": "Vienu reizi",
-            "twice": "Divreiz",
-            "threeTimes": "Trīs reizes",
-            "moreThanThreeTimes": "Vairāk nekā trīs reizes"
+          "never": "Nekad",
+          "once": "Vienu reizi",
+          "twice": "Divreiz",
+          "threeTimes": "Trīs reizes",
+          "moreThanThreeTimes": "Vairāk nekā trīs reizes"
         },
         "frequencyQuestions": {
-            "outdoorTasks": "uzdevumiem dabā?",
-            "indoorTasks": "uzdevumiem telpās?"
+          "outdoorTasks": "uzdevumiem dabā?",
+          "indoorTasks": "uzdevumiem telpās?"
         },
         "cardSubdescription2": "Es izjutu, ka ...",
         "agreementScale": {
@@ -425,7 +422,7 @@
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Veic uzdevumu un ieraksti par to savā dienasgrāmatā!",
           "taskInstructions": "Noskaties video no jebkuras sadaļas (Ūdens, Zeme, Uguns, Gaiss vai Dzīvnieki) un koncentrējies uz savām maņām — ko tu redzi, dzirdi un jūti skatoties? Ļauj attēliem un skaņām vadīt tavas domas, atmiņas un emocijas, pamanot, kā tavs ķermenis reaģē uz pieredzi!",
-          "natureVideoGalleryLink": "Dabas video galerija"        
+          "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-1.png",
         "breadcrumbItem1": "Sesijas",
@@ -463,8 +460,8 @@
           "cardTitle": "Uzdevums telpās",
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Veic uzdevumu un ieraksti par to savā dienasgrāmatā!",
-          "taskInstructions": "Izvēlies videoierakstu sadaļā Zeme un koncentrējies uz konkrētu ainavas elementu, piemēram, koku, akmeni, vai ainavas iezīmi! Vēro tā īpašības – krāsas, faktūras, formas – un pārdomā, kā šis dabas objekts liek tev justies un ko tas atklāj par tavu saikni ar dabu!",        
-          "natureVideoGalleryLink": "Dabas video galerija"        
+          "taskInstructions": "Izvēlies videoierakstu sadaļā Zeme un koncentrējies uz konkrētu ainavas elementu, piemēram, koku, akmeni, vai ainavas iezīmi! Vēro tā īpašības – krāsas, faktūras, formas – un pārdomā, kā šis dabas objekts liek tev justies un ko tas atklāj par tavu saikni ar dabu!",
+          "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-2.png",
         "breadcrumbItem1": "Sesijas",
@@ -472,7 +469,7 @@
         "leftNavigationLink": "Atpakaļ uz 1. sesiju",
         "rightNavigationLink": "Pāriet uz 3. sesiju",
         "diaryQuestions": {
-            "question1": "Ko šī pieredze man stāsta par sevi un dabu?"
+          "question1": "Ko šī pieredze man stāsta par sevi un dabu?"
         }
       },
       "session3": {
@@ -503,7 +500,7 @@
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Veic uzdevumu un ieraksti par to savā dienasgrāmatā!",
           "taskInstructions": "Skaties video no Ūdens vai Gaisa sadaļas un aizver acis, klausoties skaņās ar mūzikas pavadījumu vai bez tā! Pievērs uzmanību tam, kā šīs dabas skaņas ietekmē tavas domas un emocijas - nomierina, sniedz enerģiju vai raisa atmiņas!",
-          "natureVideoGalleryLink": "Dabas video galerija"                
+          "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-3.png",
         "breadcrumbItem1": "Sesijas",
@@ -511,7 +508,7 @@
         "leftNavigationLink": "Atpakaļ uz 2. sesiju",
         "rightNavigationLink": "Pāriet uz 4. sesiju",
         "diaryQuestions": {
-            "question1": "Kā dabas skaņas ietekmē manas domas un jūtas?"
+          "question1": "Kā dabas skaņas ietekmē manas domas un jūtas?"
         }
       },
       "session4": {
@@ -542,7 +539,7 @@
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Veic uzdevumu un ieraksti par to savā dienasgrāmatā!",
           "taskInstructions": "Izvēlies video, kurā redzami cilvēki, kas mijiedarbojas ar dabu, piemēram, pastaigājas mežā, sēž pie upes vai vēro dzīvniekus! Novēro  viņu uzvedību - kā viņi mijiedarbojas ar vidi? Pārdomā, kā citu klātbūtne ietekmē tavu  paša uztveri par dabu.",
-          "natureVideoGalleryLink": "Dabas video galerija"        
+          "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-4.png",
         "breadcrumbItem1": "Sesijas",
@@ -550,7 +547,7 @@
         "leftNavigationLink": "Atpakaļ uz 3. sesiju",
         "rightNavigationLink": "Pāriet uz 5. sesiju",
         "diaryQuestions": {
-            "question1": "Kā mana sociālā vide ietekmē laiku, ko pavadu dabā?"
+          "question1": "Kā mana sociālā vide ietekmē laiku, ko pavadu dabā?"
         }
       },
       "session5": {
@@ -580,7 +577,7 @@
           "cardTitle": "Uzdevums telpās",
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Pabeidz uzdevumu un ieraksti par to savā dienasgrāmatā.",
-          "taskInstructions": "Izvēlies videoklipu sadaļā Zeme vai Ūdens un koncentrējies uz dabas objektu ainavas attēlā, piemēram, klinti, koku vai plūstošu straumi. Skatoties, praktizē 4-7 elpošanu - ieelpo četras sekundes, izelpo septiņas - iedomājoties, ka tu un objekts elpojat kopā, apmainoties ar enerģiju  katrā elpā. Pēc videoklipa pārdomā, kā šī pieredze lika tev justies, un apsver, kas varētu traucēt tev sazināties ar dabu reālajā dzīvē, kā arī veidus, kā to pārvarēt.",        
+          "taskInstructions": "Izvēlies videoklipu sadaļā Zeme vai Ūdens un koncentrējies uz dabas objektu ainavas attēlā, piemēram, klinti, koku vai plūstošu straumi. Skatoties, praktizē 4-7 elpošanu - ieelpo četras sekundes, izelpo septiņas - iedomājoties, ka tu un objekts elpojat kopā, apmainoties ar enerģiju  katrā elpā. Pēc videoklipa pārdomā, kā šī pieredze lika tev justies, un apsver, kas varētu traucēt tev sazināties ar dabu reālajā dzīvē, kā arī veidus, kā to pārvarēt.",
           "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-5.png",
@@ -589,8 +586,8 @@
         "leftNavigationLink": "Atpakaļ uz 4. sesiju",
         "rightNavigationLink": "Pāriet uz 6. sesiju",
         "diaryQuestions": {
-            "question1": "Kādi šķēršļi man traucē pavadīt laiku dabā un kā es tos varu pārvarēt?",
-            "question2": "Kādi risinājumi šķiet reāli manam dzīvesveidam?"
+          "question1": "Kādi šķēršļi man traucē pavadīt laiku dabā un kā es tos varu pārvarēt?",
+          "question2": "Kādi risinājumi šķiet reāli manam dzīvesveidam?"
         }
       },
       "session6": {
@@ -620,7 +617,7 @@
           "cardTitle": "Uzdevums telpās",
           "requiredLabel": "Alternatīva",
           "taskDescription": "Šeit ir alternatīvs uzdevums, izmantojot dabas video galeriju, ja došanās ārā ir sarežģīta. Pabeidz uzdevumu un ierakstipar to savā dienasgrāmatā!",
-          "taskInstructions": "Atlasi videoklipu sadaļā Uguns, ūdens vai gaiss un koncentrējes uz kustību tajā — viļņiem, liesmām, vēju vai plūstošiem dzīvniekiem!  Mēģini atspoguļot šīs kustības ar rokām vai ķermeni, ļaujot sev plūst ar dabas ritmu, un pārdomā, kā šī kustība liek tev justies!",        
+          "taskInstructions": "Atlasi videoklipu sadaļā Uguns, ūdens vai gaiss un koncentrējes uz kustību tajā — viļņiem, liesmām, vēju vai plūstošiem dzīvniekiem!  Mēģini atspoguļot šīs kustības ar rokām vai ķermeni, ļaujot sev plūst ar dabas ritmu, un pārdomā, kā šī kustība liek tev justies!",
           "natureVideoGalleryLink": "Dabas video galerija"
         },
         "image": "/session-6.png",
@@ -629,7 +626,7 @@
         "leftNavigationLink": "Atpakaļ uz 5. sesiju",
         "rightNavigationLink": "Pāriet uz 7. sesiju",
         "diaryQuestions": {
-            "question1": "Ko es apņemtos darīt nākamo trīs mēnešu laikā, lai vairāk laika pavadītu dabā?"
+          "question1": "Ko es apņemtos darīt nākamo trīs mēnešu laikā, lai vairāk laika pavadītu dabā?"
         }
       },
       "session7": {
@@ -690,7 +687,7 @@
         "water": {
           "title": "Ūdens",
           "heroSection": {
-            "paragraph1": "Kāpēc mēs mīlam ūdeni? Tajā ir sena maģija, kas ar saviem  ritmiem nomierina  dvēseli. Ūdens veicina mūsos dziļu labbūtību,  ļaujot aizplūst spriedzei un iedvešot mieru. Vai staigājam gar okeānu, ieklausāmies lietus maigajā čaboņā vai apbrīnojam ūdenskrituma skaļos dārdus, mūs pārņem miers un bijība. Katra straume, vilnis un piliens kļūst par atjaunošanās dziesmu. Sajūti mieru vēsa ūdens plūsmā, kas skalojas gar nogurušām kājām, sadzirdiet maigu strauta  čalošanu! Tie ir mirkļi, kas mūs iezemē tagadnē, iedvesmojot apzinātību un mieru. Klausoties ūdens mūziku, jūties atjaunots, gluži kā šūpulī dabas maigajā apskāvienā!", 
+            "paragraph1": "Kāpēc mēs mīlam ūdeni? Tajā ir sena maģija, kas ar saviem  ritmiem nomierina  dvēseli. Ūdens veicina mūsos dziļu labbūtību,  ļaujot aizplūst spriedzei un iedvešot mieru. Vai staigājam gar okeānu, ieklausāmies lietus maigajā čaboņā vai apbrīnojam ūdenskrituma skaļos dārdus, mūs pārņem miers un bijība. Katra straume, vilnis un piliens kļūst par atjaunošanās dziesmu. Sajūti mieru vēsa ūdens plūsmā, kas skalojas gar nogurušām kājām, sadzirdiet maigu strauta  čalošanu! Tie ir mirkļi, kas mūs iezemē tagadnē, iedvesmojot apzinātību un mieru. Klausoties ūdens mūziku, jūties atjaunots, gluži kā šūpulī dabas maigajā apskāvienā!",
             "paragraph2": "Izbaudi dabas skaņas un ainavas ar mūzikas pavadījumu vai bez tā!"
           },
           "videos": [
@@ -702,15 +699,13 @@
             },
             {
               "title": "Okeāna viļņi",
-              "description":
-                "Ļauj savām domām aizklīst, kad okeāna ritmiskie viļņi aptver krastu ar spēcīgu, tomēr mierpilnu dabas simfoniju!",
+              "description": "Ļauj savām domām aizklīst, kad okeāna ritmiskie viļņi aptver krastu ar spēcīgu, tomēr mierpilnu dabas simfoniju!",
               "youtubeUrlWithoutMusic": "https://www.youtube.com/watch?v=CFoYa1EEUQs",
               "youtubeUrlWithMusic": "https://www.youtube.com/watch?v=t9S1ialTSpE"
             },
             {
               "title": "Ūdenskritums",
-              "description":
-                "Stāvi, bijības pārņemts, kad varenais ūdenskritums traucas lejup ar atjaunojošu spēku, tā atbalsīm piepildot gaisu ar pirmatnēju  enerģiju!",
+              "description": "Stāvi, bijības pārņemts, kad varenais ūdenskritums traucas lejup ar atjaunojošu spēku, tā atbalsīm piepildot gaisu ar pirmatnēju enerģiju!",
               "youtubeUrlWithoutMusic": "https://www.youtube.com/watch?v=vBvBOrjVgT4",
               "youtubeUrlWithMusic": "https://www.youtube.com/watch?v=OHnlqo7QieE"
             }
@@ -884,7 +879,7 @@
       "successMessage": "Ziņu raksts veiksmīgi atjaunināts!",
       "errorMessage": "Atjauninot ziņu rakstu, radās kļūda. Lūdzu, mēģiniet vēlreiz."
     }
-  },  
+  },
   "resourcesPage": {
     "header": {
       "title": "Resursi"
@@ -1003,4 +998,3 @@
     "europeanFunding": "Šo projektu finansē ES."
   }
 }
-

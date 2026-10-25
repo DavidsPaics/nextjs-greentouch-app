@@ -235,27 +235,24 @@
         "title": "Não se esqueça!",
         "message": "Ao iniciar sessão na sua conta, pode desbloquear as restantes 7 sessões nas quais pode participar."
       },
-      "releaseDateStatus": {
+      "unlockStatus": {
         "previousSessionsCompletionRequired": "As sessões anteriores devem ser concluídas para desbloquear novas.",
-        "releaseDate": "Data de Lançamento: ",
-        "comingSoon": "Brevemente",
-        "needsToBeSet": "A data de lançamento precisa de ser definida"
+        "unlocksOn": "Desbloqueia a {date}"
       },
       "sessionStatus": {
         "completed": "Concluído",
         "inProgress": "Em Progresso",
-        "toBeCompleted": "A Concluir"
+        "toBeCompleted": "A Concluir",
+        "availableIn": "{hours, plural, one {A sessão estará disponível dentro de # hora} other {A sessão estará disponível dentro de # horas}}"
       },
-      "setReleaseDateDialog": {
-        "title": "Data de Lançamento do Conjunto",
-        "description1": "Escolha a data e a hora em que ",
+      "setUnlockDelayDialog": {
+        "title": "Definir Atraso de Desbloqueio",
+        "description1": "Escolha quantas horas após a conclusão da sessão anterior ",
         "description2": " deverá ficar disponível.",
-        "labelDate": "Data",
-        "pickDate": "Escolhe uma data",
-        "labelTime": "Hora",
+        "labelHours": "Horas",
         "actionButton": "Guardar",
-        "successMessage": "Data de lançamento definida com sucesso.",
-        "errorMessage": "Ocorreu um erro ao definir a data de lançamento. Por favor, tente novamente."
+        "successMessage": "Atraso de desbloqueio definido com sucesso.",
+        "errorMessage": "Ocorreu um erro ao definir o atraso de desbloqueio. Por favor, tente novamente."
       },
       "notAvailable": {
         "title": "Esta sessão ainda não está disponível",

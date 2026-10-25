@@ -5,10 +5,10 @@ import { HouseIcon, TreeDeciduous } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SessionsAccordion } from "@/components/greentouchSessions/sessionsAccordion";
 import NotAvailable from "@/components/greentouchSessions/notAvailable";
-import { getGreentouchSessionByName } from "@/actions/greentouch-session";
+import { getGreentouchSessionByName, getSessionUnlockStatus } from "@/actions/greentouch-session";
 import NatureConnectednessCard from "@/components/greentouchSessions/natureConnectednessCard";
 import DiaryCard from "@/components/greentouchSessions/diaryCard";
-import { getAllCompletedGreentouchSessions, getCurrentGreentouchSessionUserData } from "@/actions/greentouch-session-user-data";
+import { getCurrentGreentouchSessionUserData } from "@/actions/greentouch-session-user-data";
 import FavoriteButton from "@/components/greentouchSessions/favoriteButton";
 import SurveyCard from "@/components/greentouchSessions/surveyCard";
 import SessionCompletedCard from "@/components/greentouchSessions/sessionCompletedCard";
@@ -25,18 +25,13 @@ export default async function SessionTwoPage() {
 
     const dbSession = await getGreentouchSessionByName("session-2");
 
-    const completedSessions = await getAllCompletedGreentouchSessions();
-    const previousSession = await getGreentouchSessionByName("session-1");
-    const previousSessionCompleted = completedSessions.some(completedSession => completedSession.greentouchSession.name === previousSession?.name);
+    const { unlocked } = await getSessionUnlockStatus("session-2");
 
     const userData = dbSession ? await getCurrentGreentouchSessionUserData(dbSession.id) : null;
     
-    const now = new Date();
-    const releaseDate = dbSession?.releaseDate ? new Date(dbSession.releaseDate) : null;
-
     const t = await getTranslations('sessionsPage');
 
-    if ((!releaseDate || releaseDate > now || !previousSessionCompleted) && session.user.role !== "admin") {
+    if (!unlocked && session.user.role !== "admin") {
         return (
             <NotAvailable />
         )

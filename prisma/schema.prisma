@@ -126,9 +126,9 @@ model ResourcesArticle {
 }
 
 model GreentouchSession {
-  id          String   @id @default(cuid())
-  name        String   @unique
-  releaseDate DateTime
+  id               String @id @default(cuid())
+  name             String @unique
+  unlockDelayHours Int    @default(12) // hours after the previous session is completed
 
   // Relations
   users GreentouchSessionUserData[]

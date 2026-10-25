@@ -235,27 +235,24 @@
         "title": "Opomnik!",
         "message": "S prijavo v svoj račun lahko odklenete preostalih 7 sej, v katerih lahko sodelujete."
       },
-      "releaseDateStatus": {
+      "unlockStatus": {
         "previousSessionsCompletionRequired": "Za odklep novih sej je potrebno dokončati prejšnje seje.",
-        "releaseDate": "Datum izdaje: ",
-        "comingSoon": "Kmalu na voljo",
-        "needsToBeSet": "Datum izdaje je potrebno nastaviti"
+        "unlocksOn": "Odklene se {date}"
       },
       "sessionStatus": {
         "completed": "Dokončano",
         "inProgress": "V teku",
-        "toBeCompleted": "Za dokončanje"
+        "toBeCompleted": "Za dokončanje",
+        "availableIn": "{hours, plural, one {Seja bo na voljo čez # uro} two {Seja bo na voljo čez # uri} few {Seja bo na voljo čez # ure} other {Seja bo na voljo čez # ur}}"
       },
-      "setReleaseDateDialog": {
-        "title": "Nastavi datum izdaje",
-        "description1": "Izberi datum in čas, ko bo ",
+      "setUnlockDelayDialog": {
+        "title": "Nastavi zamik odklepa",
+        "description1": "Izberi, koliko ur po dokončanju prejšnje seje bo ",
         "description2": " na voljo.",
-        "labelDate": "Datum",
-        "pickDate": "Izberi datum",
-        "labelTime": "Čas",
+        "labelHours": "Ure",
         "actionButton": "Shrani",
-        "successMessage": "Datum izdaje je bil uspešno nastavljen.",
-        "errorMessage": "Pri nastavljanju datuma izdaje je prišlo do napake. Poskusite znova."
+        "successMessage": "Zamik odklepa je bil uspešno nastavljen.",
+        "errorMessage": "Pri nastavljanju zamika odklepa je prišlo do napake. Poskusite znova."
       },
       "notAvailable": {
         "title": "Ta seja še ni na voljo",

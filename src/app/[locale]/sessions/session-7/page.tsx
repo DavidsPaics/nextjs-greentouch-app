@@ -4,10 +4,10 @@ import Link from "next/link";
 import { HouseIcon, TreeDeciduous } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SessionsAccordion } from "@/components/greentouchSessions/sessionsAccordion";
-import { getGreentouchSessionByName } from "@/actions/greentouch-session";
+import { getGreentouchSessionByName, getSessionUnlockStatus } from "@/actions/greentouch-session";
 import NotAvailable from "@/components/greentouchSessions/notAvailable";
 import NatureConnectednessCard from "@/components/greentouchSessions/natureConnectednessCard";
-import { getAllCompletedGreentouchSessions, getCurrentGreentouchSessionUserData } from "@/actions/greentouch-session-user-data";
+import { getCurrentGreentouchSessionUserData } from "@/actions/greentouch-session-user-data";
 import FavoriteButton from "@/components/greentouchSessions/favoriteButton";
 import SessionCompletedCard from "@/components/greentouchSessions/sessionCompletedCard";
 import { getTranslations } from "next-intl/server";
@@ -23,18 +23,13 @@ export default async function SessionSevenPage() {
 
     const dbSession = await getGreentouchSessionByName("session-7");
 
-    const completedSessions = await getAllCompletedGreentouchSessions();
-    const previousSession = await getGreentouchSessionByName("session-6");
-    const previousSessionCompleted = completedSessions.some(completedSession => completedSession.greentouchSession.name === previousSession?.name);
+    const { unlocked } = await getSessionUnlockStatus("session-7");
 
     const userData = dbSession ? await getCurrentGreentouchSessionUserData(dbSession.id) : null;
         
-    const now = new Date();
-    const releaseDate = dbSession?.releaseDate ? new Date(dbSession.releaseDate) : null;
-
     const t = await getTranslations('sessionsPage');
 
-    if ((!releaseDate || releaseDate > now || !previousSessionCompleted) && session.user.role !== "admin") {
+    if (!unlocked && session.user.role !== "admin") {
         return (
             <NotAvailable />
         )

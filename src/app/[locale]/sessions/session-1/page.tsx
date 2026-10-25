@@ -5,7 +5,6 @@ import { TreeDeciduous, HouseIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SessionsAccordion } from "@/components/greentouchSessions/sessionsAccordion";
 import { getGreentouchSessionByName } from "@/actions/greentouch-session";
-import NotAvailable from "@/components/greentouchSessions/notAvailable";
 import NatureConnectednessCard from "@/components/greentouchSessions/natureConnectednessCard";
 import DiaryCard from "@/components/greentouchSessions/diaryCard";
 import { getCurrentGreentouchSessionUserData } from "@/actions/greentouch-session-user-data";
@@ -27,16 +26,7 @@ export default async function SessionOnePage() {
 
     const userData = dbSession ? await getCurrentGreentouchSessionUserData(dbSession.id) : null;
 
-    const now = new Date();
-    const releaseDate = dbSession?.releaseDate ? new Date(dbSession.releaseDate) : null;
-
     const t = await getTranslations('sessionsPage');
-
-    if ((!releaseDate || releaseDate > now) && session.user.role !== "admin") {
-        return (
-            <NotAvailable />
-        )
-    }
 
     return (
         <SessionPageProvider 

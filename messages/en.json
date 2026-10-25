@@ -235,27 +235,24 @@
         "title": "Reminder!",
         "message": "By signing in to your account, you can unlock the remaining 7 sessions to participate in."
       },
-      "releaseDateStatus": {
+      "unlockStatus": {
         "previousSessionsCompletionRequired": "Previous sessions must be completed to unlock new ones.",
-        "releaseDate": "Release Date: ",
-        "comingSoon": "Coming Soon",
-        "needsToBeSet": "Release Date needs to be set"
+        "unlocksOn": "Unlocks on {date}"
       },
       "sessionStatus": {
         "completed": "Completed",
         "inProgress": "In Progress",
-        "toBeCompleted": "To Be Completed"
+        "toBeCompleted": "To Be Completed",
+        "availableIn": "{hours, plural, one {Session will be available in # hour} other {Session will be available in # hours}}"
       },
-      "setReleaseDateDialog": {
-        "title": "Set Release Date",
-        "description1": "Choose the date and time when ",
+      "setUnlockDelayDialog": {
+        "title": "Set Unlock Delay",
+        "description1": "Choose how many hours after the previous session is completed ",
         "description2": " should become available.",
-        "labelDate": "Date",
-        "pickDate": "Pick a date",
-        "labelTime": "Time",
+        "labelHours": "Hours",
         "actionButton": "Save",
-        "successMessage": "Release date set successfully.",
-        "errorMessage": "An error occurred while setting the release date. Please try again."
+        "successMessage": "Unlock delay set successfully.",
+        "errorMessage": "An error occurred while setting the unlock delay. Please try again."
       },
       "notAvailable": {
         "title": "This session is not yet available",
