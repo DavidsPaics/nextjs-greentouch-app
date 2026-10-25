@@ -45,7 +45,6 @@ interface SignUpFormProps {
         labelProfessionalInterest: string;
         labelBothOfThem: string;
         labelEmail: string;
-        labelUsername: string;
         labelPassword: string;
         labelConfirmPassword: string;
         buttonSignUp: string;
@@ -56,9 +55,6 @@ interface SignUpFormProps {
             lastNameRequired: string;
             validEmailRequired: string;
             confirmPasswordRequired: string;
-            usernameTooShort: string;
-            usernameTooLong: string;
-            usernameInvalidCharacters: string;
             selectPositionRequired: string;
             selectMotivationRequired: string;
             selectUniversityRequired: string;
@@ -88,12 +84,6 @@ export function SignUpForm({ signUpFormTranslations }: SignUpFormProps){
         }),
         password: passwordSchema (signUpFormTranslations.formMessages.validation),
         confirmPassword: z.string().min(1, { message: `${signUpFormTranslations.formMessages.confirmPasswordRequired}` }),
-        username: z.string().min(3, { message: `${signUpFormTranslations.formMessages.usernameTooShort}` }).max(30).trim().refine((value) => {
-            // Allow only alphanumeric characters and underscores
-            return /^[a-zA-Z0-9_]+$/.test(value);
-        }, {
-            message: `${signUpFormTranslations.formMessages.usernameInvalidCharacters}`,
-        }),
         position: z.enum(POSITIONS, { message: `${signUpFormTranslations.formMessages.selectPositionRequired}` }),
         motivation: z.enum(MOTIVATIONS, { message: `${signUpFormTranslations.formMessages.selectMotivationRequired}` }),
         university: z.string().min(1, { message: `${signUpFormTranslations.formMessages.selectUniversityRequired}` }),
@@ -120,7 +110,6 @@ export function SignUpForm({ signUpFormTranslations }: SignUpFormProps){
             email: "",
             password: "",
             confirmPassword: "",
-            username: "",
             position: undefined,
             motivation: undefined,
             university: "",
@@ -128,14 +117,13 @@ export function SignUpForm({ signUpFormTranslations }: SignUpFormProps){
         },
     });
 
-    async function onSubmit({ firstName, lastName, email, password, username, position, motivation, university, specialization }: SignUpFormValues) {
+    async function onSubmit({ firstName, lastName, email, password, position, motivation, university, specialization }: SignUpFormValues) {
         setError(null)
 
         const {error} = await authClient.signUp.email({
             name: firstName + " " + lastName,
             email,
             password,
-            username,
             position,
             motivation,
             university,
@@ -302,22 +290,6 @@ export function SignUpForm({ signUpFormTranslations }: SignUpFormProps){
                             <FormMessage />
                             </FormItem>
                         )}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            name="username"
-                            render={({ field }) => (
-                            <FormItem className="flex-1">
-                                <FormLabel>
-                                {signUpFormTranslations.labelUsername} <span className="text-[#2E7D5A]">*</span>
-                                </FormLabel>
-                                <FormControl>
-                                <Input type="text" placeholder={signUpFormTranslations.labelUsername} {...field} />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                            )}
                         />
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">

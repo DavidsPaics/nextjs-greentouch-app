@@ -2,7 +2,7 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "@/lib/prisma";
 import { nextCookies } from "better-auth/next-js";
-import { username, admin } from "better-auth/plugins"
+import { admin } from "better-auth/plugins"
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { passwordSchema } from "./validation";
 
@@ -68,10 +68,5 @@ export const auth = betterAuth({
         }
       })
     },
-    plugins: [username({
-        displayUsernameValidator: (displayUsername) => {
-            // Allow only alphanumeric characters and underscores
-            return /^[a-zA-Z0-9_]+$/.test(displayUsername)
-        }
-    }), admin(), nextCookies()] // make sure this is the last plugin in the array
+    plugins: [admin(), nextCookies()] // make sure this is the last plugin in the array
 });

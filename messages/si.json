@@ -32,21 +32,20 @@
   },
   "signInPage": {
     "title": "Vnesite podatke svojega računa in začnite raziskovati",
-    "disclaimer": "V primeru izgube uporabniškega imena ali gesla se obrnite na skrbnika strežnika za pomoč.",
+    "disclaimer": "V primeru izgube gesla se obrnite na skrbnika strežnika za pomoč.",
     "alreadySignedIn": {
       "title": "Že ste prijavljeni",
       "description": "Če želite zamenjati račun, se najprej odjavite."
     },
     "signInForm": {
-      "labelUsername": "Uporabniško ime",
+      "labelEmail": "Email",
       "labelPassword": "Geslo",
       "buttonSignIn": "Prijava",
       "noAccountText": "Nimate računa?",
       "signUpLink": "Registriraj se",
       "formMessages": {
-        "usernameTooShort": "Uporabniško ime mora biti dolgo vsaj 3 znake.",
-        "usernameTooLong": "Uporabniško ime mora biti dolgo največ 30 znakov.",
-        "usernameInvalidCharacters": "Uporabniško ime sme vsebovati le črke, številke in podčrtaje.",
+        "validEmailRequired": "Prosimo, vnesite veljaven e-poštni naslov.",
+        "invalidCredentials": "Napačen e-poštni naslov ali geslo.",
         "passwordRequired": "Geslo je obvezno.",
         "unknownError": "Nekaj je šlo narobe."
       }
@@ -75,7 +74,6 @@
       "labelProfessionalInterest": "Poklicni interes",
       "labelBothOfThem": "Oba",
       "labelEmail": "Email",
-      "labelUsername": "Uporabniško ime",
       "labelPassword": "Geslo",
       "labelConfirmPassword": "Potrdi geslo",
       "buttonSignUp": "Pošlji",
@@ -86,9 +84,6 @@
         "lastNameRequired": "Priimek je obvezen.",
         "validEmailRequired": "Prosimo, vnesite veljaven e-poštni naslov.",
         "confirmPasswordRequired": "Prosimo, potrdite svoje geslo.",
-        "usernameTooShort": "Uporabniško ime mora biti dolgo vsaj 3 znake.",
-        "usernameTooLong": "Uporabniško ime mora biti dolgo največ 30 znakov.",
-        "usernameInvalidCharacters": "Uporabniško ime sme vsebovati le črke, številke in podčrtaje.",
         "selectPositionRequired": "Prosimo, izberite svoj položaj.",
         "selectMotivationRequired": "Prosimo, izberite svojo motivacijo.",
         "selectUniversityRequired": "Univerza je obvezna.",

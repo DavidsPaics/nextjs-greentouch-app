@@ -21,8 +21,6 @@ model User {
   image           String?
   createdAt       DateTime
   updatedAt       DateTime
-  username        String
-  displayUsername String
   sessions        Session[]
   accounts        Account[]
 
@@ -42,7 +40,6 @@ model User {
   greentouchSessions GreentouchSessionUserData[] // One-to-many
 
   @@unique([email])
-  @@unique([username])
   @@map("user")
 }
 

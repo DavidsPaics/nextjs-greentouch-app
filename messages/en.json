@@ -32,21 +32,20 @@
   },
   "signInPage": {
     "title": "Enter your account details and start exploring",
-    "disclaimer": "In case of losing your username or password, please contact the server administrator for assistance.",
+    "disclaimer": "In case of losing your password, please contact the server administrator for assistance.",
     "alreadySignedIn": {
       "title": "You are already signed in",
       "description": "If you want to switch accounts, please sign out first."
     },
     "signInForm": {
-      "labelUsername": "Username",
+      "labelEmail": "Email",
       "labelPassword": "Password",
       "buttonSignIn": "Sign In",
       "noAccountText": "Don't have an account?",
       "signUpLink": "Sign up",
       "formMessages": {
-        "usernameTooShort": "Username must be at least 3 characters.",
-        "usernameTooLong": "Username must be be 30 characters or fewer.",
-        "usernameInvalidCharacters": "Username may only contain letters, numbers and underscores.",
+        "validEmailRequired": "Please enter a valid email address.",
+        "invalidCredentials": "Invalid email or password.",
         "passwordRequired": "Password is required.",
         "unknownError": "Something went wrong."
       }
@@ -75,7 +74,6 @@
       "labelProfessionalInterest": "Professional Interest",
       "labelBothOfThem": "Both of them",
       "labelEmail": "Email",
-      "labelUsername": "Username",
       "labelPassword": "Password",
       "labelConfirmPassword": "Confirm Password",
       "buttonSignUp": "Submit",
@@ -86,9 +84,6 @@
         "lastNameRequired": "Last name is required.",
         "validEmailRequired": "Please enter a valid email address.",
         "confirmPasswordRequired": "Please confirm your password.",
-        "usernameTooShort": "Username must be at least 3 characters.",
-        "usernameTooLong": "Username must be be 30 characters or fewer.",
-        "usernameInvalidCharacters": "Username may only contain letters, numbers and underscores.",
         "selectPositionRequired": "Please select your position.",
         "selectMotivationRequired": "Please select your motivation.",
         "selectUniversityRequired": "University is required.",

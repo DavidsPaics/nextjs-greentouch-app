@@ -38,15 +38,14 @@ export default async function SignInPage() {
 
                                 <SignInForm 
 									signInFormTranslations={{
-										labelUsername: t("signInForm.labelUsername"),
+										labelEmail: t("signInForm.labelEmail"),
 										labelPassword: t("signInForm.labelPassword"),
 										buttonSignIn: t("signInForm.buttonSignIn"),
 										noAccountText: t("signInForm.noAccountText"),
 										signUpLink: t("signInForm.signUpLink"),
 										formMessages: {
-											usernameTooShort: t("signInForm.formMessages.usernameTooShort"),
-											usernameTooLong: t("signInForm.formMessages.usernameTooLong"),
-											usernameInvalidCharacters: t("signInForm.formMessages.usernameInvalidCharacters"),
+											validEmailRequired: t("signInForm.formMessages.validEmailRequired"),
+											invalidCredentials: t("signInForm.formMessages.invalidCredentials"),
 											passwordRequired: t("signInForm.formMessages.passwordRequired"),
 											unknownError: t("signInForm.formMessages.unknownError")
 										}

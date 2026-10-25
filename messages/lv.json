@@ -32,21 +32,20 @@
   },
   "signInPage": {
     "title": "Ievadiet sava konta informāciju un sāciet izpēti!",
-    "disclaimer": "Lietotājvārda vai paroles nozaudēšanas gadījumā, lūdzu, sazinieties ar servera administratoru, lai saņemtu palīdzību.",
+    "disclaimer": "Paroles nozaudēšanas gadījumā, lūdzu, sazinieties ar servera administratoru, lai saņemtu palīdzību.",
     "alreadySignedIn": {
       "title": "Jūs jau esat pierakstījies",
       "description": "Ja vēlaties mainīt kontu, lūdzu, vispirms izrakstieties."
     },
     "signInForm": {
-      "labelUsername": "Lietotājvārds",
+      "labelEmail": "E-pasts",
       "labelPassword": "Parole",
       "buttonSignIn": "Pieteikties",
       "noAccountText": "Jums nav konta?",
       "signUpLink": "Reģistrēties",
       "formMessages": {
-        "usernameTooShort": "Lietotājvārdam jābūt vismaz 3 rakstzīmēm.",
-        "usernameTooLong": "Lietotājvārdam jābūt ne vairāk kā 30 rakstzīmēm.",
-        "usernameInvalidCharacters": "Lietotājvārds var saturēt tikai burtus, ciparus un pasvītrojumus.",
+        "validEmailRequired": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+        "invalidCredentials": "Nepareizs e-pasts vai parole.",
         "passwordRequired": "Parole ir nepieciešama.",
         "unknownError": "Kaut kas nogāja greizi."
       }
@@ -75,7 +74,6 @@
       "labelProfessionalInterest": "Profesionāla interese",
       "labelBothOfThem": "Abas",
       "labelEmail": "E-pasts",
-      "labelUsername": "Lietotājvārds",
       "labelPassword": "Parole",
       "labelConfirmPassword": "Apstiprināt paroli",
       "buttonSignUp": "Iesniegt",
@@ -86,9 +84,6 @@
         "lastNameRequired": "Uzvārds ir obligāts.",
         "validEmailRequired": "Lūdzu, ievadiet derīgu e-pasta adresi.",
         "confirmPasswordRequired": "Lūdzu, apstipriniet savu paroli.",
-        "usernameTooShort": "Lietotājvārdam jābūt vismaz 3 rakstzīmēm.",
-        "usernameTooLong": "Lietotājvārdam jābūt ne vairāk kā 30 rakstzīmēm.",
-        "usernameInvalidCharacters": "Lietotājvārds var saturēt tikai burtus, ciparus un pasvītrojumus.",
         "selectPositionRequired": "Lūdzu, izvēlieties savu amatu.",
         "selectMotivationRequired": "Lūdzu, izvēlieties savu motivāciju.",
         "selectUniversityRequired": "Nepieciešama universitāte.",

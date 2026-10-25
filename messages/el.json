@@ -32,21 +32,20 @@
   },
   "signInPage": {
     "title": "Εισαγάγετε τα στοιχεία του λογαριασμού σας και ξεκινήστε την εξερεύνηση",
-    "disclaimer": "Σε περίπτωση απώλειας του ονόματος χρήστη ή του κωδικού πρόσβασής σας, επικοινωνήστε με τον διαχειριστή του διακομιστή για βοήθεια.",
+    "disclaimer": "Σε περίπτωση απώλειας του κωδικού πρόσβασής σας, επικοινωνήστε με τον διαχειριστή του διακομιστή για βοήθεια.",
     "alreadySignedIn": {
       "title": "Έχετε ήδη συνδεθεί",
       "description": "Αν θέλετε να αλλάξετε λογαριασμό, αποσυνδεθείτε πρώτα."
     },
     "signInForm": {
-      "labelUsername": "Όνομα χρήστη",
+      "labelEmail": "Email",
       "labelPassword": "Κωδικός πρόσβασης",
       "buttonSignIn": "Είσοδος",
       "noAccountText": "Δεν έχετε λογαριασμό;",
       "signUpLink": "Εγγραφή",
       "formMessages": {
-        "usernameTooShort": "Το όνομα χρήστη πρέπει να αποτελείται από τουλάχιστον 3 χαρακτήρες.",
-        "usernameTooLong": "Το όνομα χρήστη πρέπει να αποτελείται από 30 χαρακτήρες ή λιγότερους.",
-        "usernameInvalidCharacters": "Το όνομα χρήστη μπορεί να περιέχει μόνο γράμματα, αριθμούς και κάτω παύλες.",
+        "validEmailRequired": "Εισαγάγετε μια έγκυρη διεύθυνση email.",
+        "invalidCredentials": "Μη έγκυρο email ή κωδικός πρόσβασης.",
         "passwordRequired": "Απαιτείται κωδικός πρόσβασης.",
         "unknownError": "Κάτι πήγε στραβά."
       }
@@ -75,7 +74,6 @@
       "labelProfessionalInterest": "Επαγγελματικό Ενδιαφέρον",
       "labelBothOfThem": "Και οι δύο",
       "labelEmail": "Email",
-      "labelUsername": "Όνομα χρήστη",
       "labelPassword": "Κωδικός πρόσβασης",
       "labelConfirmPassword": "Επιβεβαίωση κωδικού πρόσβασης",
       "buttonSignUp": "Υποβάλλω",
@@ -86,9 +84,6 @@
         "lastNameRequired": "Το επώνυμο είναι υποχρεωτικό.",
         "validEmailRequired": "Εισαγάγετε μια έγκυρη διεύθυνση email.",
         "confirmPasswordRequired": "Επιβεβαιώστε τον κωδικό πρόσβασής σας.",
-        "usernameTooShort": "Το όνομα χρήστη πρέπει να αποτελείται από τουλάχιστον 3 χαρακτήρες.",
-        "usernameTooLong": "Το όνομα χρήστη πρέπει να αποτελείται από 30 χαρακτήρες ή λιγότερους.",
-        "usernameInvalidCharacters": "Το όνομα χρήστη μπορεί να περιέχει μόνο γράμματα, αριθμούς και κάτω παύλες.",
         "selectPositionRequired": "Επιλέξτε τη θέση σας.",
         "selectMotivationRequired": "Επιλέξτε το κίνητρό σας.",
         "selectUniversityRequired": "Απαιτείται Πανεπιστήμιο.",

@@ -32,21 +32,20 @@
   },
   "signInPage": {
     "title": "Introduza os dados da sua conta e comece a explorar",
-    "disclaimer": "Caso perca o seu nome de utilizador ou palavra-passe, por favor contacte o administrador do servidor para obter assistência.",
+    "disclaimer": "Caso perca a sua palavra-passe, por favor contacte o administrador do servidor para obter assistência.",
     "alreadySignedIn": {
       "title": "Já iniciou sessão",
       "description": "Se quiser mudar de conta, termine a sessão primeiro."
     },
     "signInForm": {
-      "labelUsername": "Nome de utilizador",
+      "labelEmail": "Email",
       "labelPassword": "Palavra-passe",
       "buttonSignIn": "Iniciar sessão",
       "noAccountText": "Não tem conta?",
       "signUpLink": "Registar-me",
       "formMessages": {
-        "usernameTooShort": "O nome de utilizador deve ter pelo menos 3 caracteres.",
-        "usernameTooLong": "O nome de utilizador deve ter 30 caracteres ou menos.",
-        "usernameInvalidCharacters": "O nome de utilizador pode conter apenas letras, números e sublinhados.",
+        "validEmailRequired": "Por favor, introduza um endereço de email válido.",
+        "invalidCredentials": "Email ou palavra-passe inválidos.",
         "passwordRequired": "É necessária palavra-passe.",
         "unknownError": "Algo correu mal."
       }
@@ -75,7 +74,6 @@
       "labelProfessionalInterest": "Interesse Profissional",
       "labelBothOfThem": "Ambos",
       "labelEmail": "Email",
-      "labelUsername": "Nome de utilizador",
       "labelPassword": "Palavra-passe",
       "labelConfirmPassword": "Confirmar Palavra-Passe",
       "buttonSignUp": "Enviar",
@@ -86,9 +84,6 @@
         "lastNameRequired": "O apelido é obrigatório.",
         "validEmailRequired": "Por favor, introduza um endereço de email válido.",
         "confirmPasswordRequired": "Por favor, confirme a sua palavra-passe.",
-        "usernameTooShort": "O nome de utilizador deve ter pelo menos 3 caracteres.",
-        "usernameTooLong": "O nome de utilizador deve ter 30 caracteres ou menos.",
-        "usernameInvalidCharacters": "O nome de utilizador pode conter apenas letras, números e sublinhados.",
         "selectPositionRequired": "Por favor, selecione a sua posição.",
         "selectMotivationRequired": "Por favor, escolha a sua motivação.",
         "selectUniversityRequired": "A universidade é obrigatória.",

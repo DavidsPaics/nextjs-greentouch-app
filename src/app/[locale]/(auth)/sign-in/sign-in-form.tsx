@@ -25,15 +25,14 @@ import { authClient } from "@/lib/auth-client";
 
 interface SignInFormProps {
 	signInFormTranslations: {
-        labelUsername: string;
+        labelEmail: string;
         labelPassword: string;
         buttonSignIn: string;
         noAccountText: string;
         signUpLink: string;
         formMessages: {
-            usernameTooShort: string;
-            usernameTooLong: string;
-            usernameInvalidCharacters: string;
+            validEmailRequired: string;
+            invalidCredentials: string;
             passwordRequired: string;
             unknownError: string;
 	    };
@@ -43,14 +42,8 @@ interface SignInFormProps {
 export function SignInForm({ signInFormTranslations }: SignInFormProps) {
 
     const formSchema = z.object({
-        username: z
-            .string()
-            .trim()
-            .min(3, { message: `${signInFormTranslations.formMessages.usernameTooShort}` })
-            .max(30, { message: `${signInFormTranslations.formMessages.usernameTooLong}` })
-            .toLowerCase()
-            .regex(/^[a-z0-9_-]+$/, {
-                message: `${signInFormTranslations.formMessages.usernameInvalidCharacters}`,
+        email: z.email({
+            message: `${signInFormTranslations.formMessages.validEmailRequired}`,
         }),
         password: z.string().min(1, { message: `${signInFormTranslations.formMessages.passwordRequired}` }),
     });
@@ -63,24 +56,26 @@ export function SignInForm({ signInFormTranslations }: SignInFormProps) {
     const form = useForm<SignInFormValues>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            username: "",
+            email: "",
             password: "",
         },
     });
 
-    async function onSubmit({ username, password }: SignInFormValues) {
+    async function onSubmit({ email, password }: SignInFormValues) {
 
         setError(null);
         setLoading(true);
 
-        const {error} = await authClient.signIn.username({ 
-            username, 
-            password 
+        const {error} = await authClient.signIn.email({
+            email,
+            password
         });
 
         setLoading(false);
 
-        if (error) {
+        if (error?.code === "INVALID_EMAIL_OR_PASSWORD") {
+            setError(signInFormTranslations.formMessages.invalidCredentials)
+        } else if (error) {
             setError(error.message || signInFormTranslations.formMessages.unknownError)
         } else {
             window.location.replace("/")
@@ -94,12 +89,12 @@ export function SignInForm({ signInFormTranslations }: SignInFormProps) {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField
                 control={form.control}
-                name="username"
+                name="email"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>{signInFormTranslations.labelUsername}</FormLabel>
+                    <FormLabel>{signInFormTranslations.labelEmail}</FormLabel>
                     <FormControl>
-                        <Input type="text" placeholder={signInFormTranslations.labelUsername} {...field} />
+                        <Input type="email" autoComplete="email" placeholder={signInFormTranslations.labelEmail} {...field} />
                     </FormControl>
                     <FormMessage className="min-h-[20px]" />
                     </FormItem>
