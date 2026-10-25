@@ -356,6 +356,7 @@ export async function sessionIsCompleted(greentouchSessionId: string) {
                     where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
                     data: {
                         sessionCompleted: true,
+                        sessionCompletedAt: new Date(),
                     },
                 });
                 revalidatePath(`/sessions/`);
@@ -371,6 +372,7 @@ export async function sessionIsCompleted(greentouchSessionId: string) {
                     where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
                     data: {
                         sessionCompleted: true,
+                        sessionCompletedAt: new Date(),
                     },
                 });
                 revalidatePath(`/sessions/`);

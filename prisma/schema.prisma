@@ -155,7 +155,8 @@ model GreentouchSessionUserData {
   learntSomethingNewResponse String?
   closerToNatureResponse     String?
 
-  sessionCompleted Boolean @default(false)
+  sessionCompleted   Boolean   @default(false)
+  sessionCompletedAt DateTime?
 
   // Relations
   greentouchSession GreentouchSession @relation(fields: [greentouchSessionId], references: [id], onDelete: Cascade)
