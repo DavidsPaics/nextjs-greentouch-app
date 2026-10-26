@@ -1,9 +1,55 @@
+x-database-url: &database-url postgresql://${POSTGRES_USER:-greentouch}:${POSTGRES_PASSWORD:-greentouch}@db:5432/${POSTGRES_DB:-greentouch}
+
 services:
+  db:
+    container_name: greentouch-db
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-greentouch}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-greentouch}
+      POSTGRES_DB: ${POSTGRES_DB:-greentouch}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Runs once on every `docker compose up`: applies pending migrations and creates the default admin account
+  migrate:
+    container_name: greentouch-migrate
+    image: greentouch/migrate
+    build:
+      context: .
+      target: builder
+    command: sh -c "npx prisma migrate deploy && node prisma/seed-admin.mjs"
+    environment:
+      DATABASE_URL: *database-url
+      # defaults are in prisma/seed-admin.mjs
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      ADMIN_NAME: ${ADMIN_NAME:-}
+    depends_on:
+      db:
+        condition: service_healthy
+
   nextapp:
     container_name: greentouch-nextapp
     image: greentouch/nextapp
     build: .
+    restart: unless-stopped
     env_file:
       - ".env"
+    environment:
+      DATABASE_URL: *database-url
+      TZ: ${TZ:-Europe/Riga}
     ports:
       - "3000:3000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+volumes:
+  db-data:

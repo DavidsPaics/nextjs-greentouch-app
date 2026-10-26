@@ -10,9 +10,9 @@ GreenTouch is a web application built with **Next.js** that focuses on improving
 
 Before running the project, make sure you have the following installed:
 
-* **Node.js** (recommended: LTS version)
-* **Docker** and **Docker Compose**
-* A **PostgreSQL** database
+- **Node.js** (recommended: LTS version)
+- **Docker** and **Docker Compose**
+- A **PostgreSQL** database
 
 ---
 
@@ -59,8 +59,8 @@ GreenTouch uses the **Better Auth** library for user authentication and authoriz
 
 `BETTER_AUTH_SECRET` is used to encrypt data and generate secure hashes. It must:
 
-* Be **at least 32 characters long**
-* Be generated with **high entropy**
+- Be **at least 32 characters long**
+- Be generated with **high entropy**
 
 You may define your own secure random string, or generate one using the official Better Auth documentation:
 
@@ -84,25 +84,55 @@ For production deployments, this should match the public URL of your application
 
 ## Running the Application with Docker 🐋
 
-Once all environment variables are configured, you can build and run the application using Docker.
+`docker compose` starts everything the app needs:
 
-### 1. Build the Docker image
+- **db** – a PostgreSQL database (data is kept in the `db-data` volume)
+- **migrate** – applies database migrations and creates the default admin account, then exits
+- **nextapp** – the application, started once `migrate` has finished
 
-```bash
-docker compose build
+With Docker, `DATABASE_URL` is set automatically, so `.env` only needs `BETTER_AUTH_SECRET` and `BETTER_AUTH_URL`. The following optional variables can also be set in `.env`:
+
+```env
+# Database (defaults shown)
+POSTGRES_USER=greentouch
+POSTGRES_PASSWORD=greentouch
+POSTGRES_DB=greentouch
+
+# Default admin account, created on first start (defaults shown)
+ADMIN_EMAIL=greentouchtool@gmail.com
+ADMIN_PASSWORD=Greentouch001!!
+ADMIN_NAME=GreenTouch Admin
+
+# Time zone used for dates shown by the server
+TZ=Europe/Riga
 ```
 
-This command builds the application image based on the provided Docker configuration.
+The admin account is only created if it doesn't exist yet. Changing `ADMIN_PASSWORD` later does not change the password of an existing account.
 
----
-
-### 2. Start the containers
+### Build and start
 
 ```bash
-docker compose up
+docker compose up -d --build
 ```
 
 After the containers start successfully, the application will be available at the URL specified in `BETTER_AUTH_URL`.
+
+### Updating
+
+```bash
+git pull
+docker compose up -d --build
+```
+
+New database migrations are applied automatically on every start.
+
+### Database changes (developers)
+
+The database schema is managed with Prisma migrations in `prisma/migrations`. After changing `prisma/schema.prisma`, create a migration with:
+
+```bash
+npx prisma migrate dev --name <short-description>
+```
 
 ---
 
@@ -132,16 +162,6 @@ in your browser.
 
 To learn more about the technologies used in this project:
 
-* **Next.js Documentation** – [https://nextjs.org/docs](https://nextjs.org/docs)
-* **Better Auth Documentation** – [https://www.better-auth.com/docs](https://www.better-auth.com/docs)
-* **PostgreSQL** – [https://www.postgresql.org/](https://www.postgresql.org/)
-
----
-
-## Deployment
-
-The recommended deployment platform for this application is **Vercel**, but it can also be deployed using Docker on any compatible hosting provider.
-
-For more information, see:
-
-[https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment)
+- **Next.js Documentation** – [https://nextjs.org/docs](https://nextjs.org/docs)
+- **Better Auth Documentation** – [https://www.better-auth.com/docs](https://www.better-auth.com/docs)
+- **PostgreSQL** – [https://www.postgresql.org/](https://www.postgresql.org/)

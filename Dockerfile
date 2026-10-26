@@ -1,6 +1,8 @@
 # syntax=docker.io/docker/dockerfile:1
 
 FROM node:20-alpine AS base
+# Prisma needs OpenSSL on Alpine
+RUN apk add --no-cache openssl
 
 # Install dependencies only when needed
 FROM base AS deps
