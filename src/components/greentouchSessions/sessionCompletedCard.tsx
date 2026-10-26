@@ -50,7 +50,7 @@ export default function SessionCompletedCard({ sessionCompletedCardTranslations,
 
         // 2) Check that all sections are completed
         if (greentouchSessionName === "session-7") {
-            const allResponsesAvailable =  natureConnectednessValue !== undefined
+            const allResponsesAvailable =  natureConnectednessValue !== null
             if (!allResponsesAvailable) {
                 toast.error(sessionCompletedCardTranslations.notAllSectionsCompletedErrorMessage);
                 return;
@@ -58,7 +58,7 @@ export default function SessionCompletedCard({ sessionCompletedCardTranslations,
         }
         else {
             const allResponsesAvailable = surveyData &&
-            natureConnectednessValue !== undefined &&
+            natureConnectednessValue !== null &&
             diaryEntry !== null && diaryEntry.length !== 0 &&
             surveyData.outdoorTasksCount !== undefined &&
             surveyData.indoorTasksCount !== undefined &&
