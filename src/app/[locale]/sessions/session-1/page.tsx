@@ -13,6 +13,8 @@ import SurveyCard from "@/components/greentouchSessions/surveyCard";
 import SessionCompletedCard from "@/components/greentouchSessions/sessionCompletedCard";
 import { getTranslations } from "next-intl/server";
 import { SessionPageProvider } from "@/components/greentouchSessions/sessionPageContext";
+import TestLinkCard from "@/components/greentouchSessions/testLinkCard";
+import { PRETEST_URL } from "@/lib/test-links";
 
 export default async function SessionOnePage() {
 
@@ -43,6 +45,7 @@ export default async function SessionOnePage() {
                 closerToNatureResponse: userData?.closerToNatureResponse ?? undefined,
                 },
                 sessionCompleted: userData?.sessionCompleted ?? false,
+                testLinkClicked: !!userData?.testLinkClickedAt,
             }}
         >
         <main className="flex flex-col items-center justify-start w-full min-h-screen bg-[#f5f5f5] text-gray-900">
@@ -107,13 +110,13 @@ export default async function SessionOnePage() {
 
             {/* Welcome section */}
             <section className="w-full max-w-5xl mx-auto px-4 pt-8">
-                <p className="text-base font-semibold mb-4 text-gray-700"> 
+                <p className="text-base font-semibold mb-4 text-gray-700">
                     {t('greentouchSessions.session1.welcomeTitle')}
                 </p>
-                <p className="text-base mb-4 text-gray-700"> 
+                <p className="text-base mb-4 text-gray-700">
                     {t('greentouchSessions.session1.welcomeParagraph1')}
                 </p>
-                <p className="text-base mb-4 text-gray-700"> 
+                <p className="text-base mb-4 text-gray-700">
                     {t('greentouchSessions.session1.welcomeParagraph2')}
                 </p>
             </section>
@@ -134,6 +137,20 @@ export default async function SessionOnePage() {
                     unknownErrorMessage: t("additionalData.natureConnectednessCard.unknownErrorMessage")
                 }}
                 greentouchSessionId={dbSession?.id}
+            />
+
+            {/* Pre-test Card */}
+            <TestLinkCard
+                testLinkCardTranslations={{
+                    cardTitle: t("additionalData.testLinkCard.pretest.cardTitle"),
+                    requiredLabel: t("additionalData.testLinkCard.requiredLabel"),
+                    actionButton: t("additionalData.testLinkCard.pretest.actionButton"),
+                    openedLabel: t("additionalData.testLinkCard.openedLabel"),
+                    unknownErrorMessage: t("additionalData.testLinkCard.unknownErrorMessage")
+                }}
+                url={PRETEST_URL}
+                greentouchSessionId={dbSession?.id}
+                className="mt-10 mb-0"
             />
 
             {/* Outdoor Task Card */}
@@ -287,6 +304,7 @@ export default async function SessionOnePage() {
                     },
                     sessionIdMissingErrorMessage: t("additionalData.sessionCompletedCard.sessionIdMissingErrorMessage"),
                     notAllSectionsCompletedErrorMessage: t("additionalData.sessionCompletedCard.notAllSectionsCompletedErrorMessage"),
+                    testLinkNotOpenedErrorMessage: t("additionalData.sessionCompletedCard.testLinkNotOpenedErrorMessage"),
                     unknownErrorMessage: t("additionalData.sessionCompletedCard.unknownErrorMessage"),
                     successMessage: t("additionalData.sessionCompletedCard.successMessage")
                 }} 

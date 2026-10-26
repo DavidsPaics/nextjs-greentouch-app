@@ -152,6 +152,9 @@ model GreentouchSessionUserData {
   learntSomethingNewResponse String?
   closerToNatureResponse     String?
 
+  // Pre-test (session 1) / post-test (session 7) link opened
+  testLinkClickedAt DateTime?
+
   sessionCompleted   Boolean   @default(false)
   sessionCompletedAt DateTime?
 

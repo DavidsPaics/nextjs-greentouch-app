@@ -342,8 +342,22 @@
         },
         "sessionIdMissingErrorMessage": "Session ID is missing. Make sure the session is already available.",
         "notAllSectionsCompletedErrorMessage": "Please complete all required sections before marking the session as completed.",
+        "testLinkNotOpenedErrorMessage": "Please open the test before marking the session as completed.",
         "unknownErrorMessage": "An error occurred while marking the session as completed. Please try again.",
         "successMessage": "Session marked as completed successfully."
+      },
+      "testLinkCard": {
+        "requiredLabel": "Required to complete",
+        "openedLabel": "Opened",
+        "unknownErrorMessage": "Something went wrong. Please try again.",
+        "pretest": {
+          "cardTitle": "First, please complete the survey!",
+          "actionButton": "Open pre-test"
+        },
+        "posttest": {
+          "cardTitle": "Before completing the session, please complete the survey!",
+          "actionButton": "Open post-test"
+        }
       },
       "sessionsAccordion": {
         "accordionItem1": {

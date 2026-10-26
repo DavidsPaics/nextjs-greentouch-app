@@ -2,6 +2,7 @@
 
 import { getServerSession } from "@/lib/get-session";
 import { prisma } from "@/lib/prisma";
+import { requiresTestLink } from "@/lib/test-links";
 import { revalidatePath } from "next/cache";
 
 export async function getCurrentGreentouchSessionUserData(greentouchSessionId: string) {
@@ -313,6 +314,46 @@ export async function saveSurveyData(greentouchSessionId: string, outdoorTasksCo
     }
 }
 
+export async function saveTestLinkClicked(greentouchSessionId: string) {
+    try {
+        const session = await getServerSession();
+        if (!session) {
+            console.error("User not authenticated");
+            return {success:false, error: "User not authenticated"};
+        }
+        const userId = session.user.id;
+
+        const existingData = await prisma.greentouchSessionUserData.findUnique({
+            where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
+        });
+
+        // keep the first click, the link can be reopened any number of times
+        if (existingData?.testLinkClickedAt) {
+            return { success: true };
+        }
+
+        if (existingData) {
+            await prisma.greentouchSessionUserData.update({
+                where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
+                data: { testLinkClickedAt: new Date() },
+            });
+        } else {
+            await prisma.greentouchSessionUserData.create({
+                data: {
+                    userId,
+                    greentouchSessionId,
+                    testLinkClickedAt: new Date(),
+                },
+            });
+        }
+
+        return { success: true };
+    } catch (error) {
+        console.error("Error saving test link click:", error);
+        return { success: false, error: "Failed to save test link click." };
+    }
+}
+
 export async function sessionIsCompleted(greentouchSessionId: string) {
     try {
         const session = await getServerSession();
@@ -350,7 +391,8 @@ export async function sessionIsCompleted(greentouchSessionId: string) {
                 existingData?.mentalHealthResponse !== null &&
                 existingData?.friendsFamilyResponse !== null &&
                 existingData?.learntSomethingNewResponse !== null &&
-                existingData?.closerToNatureResponse !== null
+                existingData?.closerToNatureResponse !== null &&
+                (!requiresTestLink(sessionName) || existingData?.testLinkClickedAt)
             ) {
                 await prisma.greentouchSessionUserData.update({
                     where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
@@ -366,8 +408,12 @@ export async function sessionIsCompleted(greentouchSessionId: string) {
                 return {success:false, error: "User data not found"};
             }
         } else {
-            // For other sessions, just require natureConnectedness
-            if (existingData?.natureConnectedness !== null) {
+            // For other sessions, just require natureConnectedness (and the test link, if the session has one)
+            if (
+                existingData &&
+                existingData.natureConnectedness !== null &&
+                (!requiresTestLink(sessionName) || existingData.testLinkClickedAt)
+            ) {
                 await prisma.greentouchSessionUserData.update({
                     where: { greentouchSessionId_userId: { greentouchSessionId, userId } },
                     data: {
@@ -378,8 +424,8 @@ export async function sessionIsCompleted(greentouchSessionId: string) {
                 revalidatePath(`/sessions/`);
                 return { success: true };
             } else {
-                console.error("Cannot complete session. Nature connectedness data not found.");
-                return {success:false, error: "Nature connectedness data not found"};
+                console.error("Cannot complete session. Nature connectedness or test link data not found.");
+                return {success:false, error: "Nature connectedness or test link data not found"};
             }
         }
     } catch (error) {

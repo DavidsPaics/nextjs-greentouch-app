@@ -349,8 +349,22 @@
         },
         "sessionIdMissingErrorMessage": "ID seje manjka. Prepričajte se, da je seja že na voljo.",
         "notAllSectionsCompletedErrorMessage": "Prosimo, dokončajte vse zahtevane odseke, preden označite sejo kot dokončano.",
+        "testLinkNotOpenedErrorMessage": "Prosimo, odprite test, preden označite sejo kot dokončano.",
         "unknownErrorMessage": "Pri označevanju seje kot dokončane je prišlo do napake. Poskusite znova.",
         "successMessage": "Seja je bila uspešno označena kot dokončana."
+      },
+      "testLinkCard": {
+        "requiredLabel": "Obvezno za dokončanje",
+        "openedLabel": "Odprto",
+        "unknownErrorMessage": "Prišlo je do napake. Poskusite znova.",
+        "pretest": {
+          "cardTitle": "Prosimo, da najprej izpolnite vprašalnik!",
+          "actionButton": "Odpri predtest"
+        },
+        "posttest": {
+          "cardTitle": "Prosimo, da pred zaključkom ponovno izpolnite vprašalnik!",
+          "actionButton": "Odpri potest"
+        }
       },
       "sessionsAccordion": {
         "accordionItem1": {

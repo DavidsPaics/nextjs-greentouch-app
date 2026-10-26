@@ -12,6 +12,8 @@ import FavoriteButton from "@/components/greentouchSessions/favoriteButton";
 import SessionCompletedCard from "@/components/greentouchSessions/sessionCompletedCard";
 import { getTranslations } from "next-intl/server";
 import { SessionPageProvider } from "@/components/greentouchSessions/sessionPageContext";
+import TestLinkCard from "@/components/greentouchSessions/testLinkCard";
+import { POSTTEST_URL } from "@/lib/test-links";
 
 export default async function SessionSevenPage() {
     
@@ -50,6 +52,7 @@ export default async function SessionSevenPage() {
                 closerToNatureResponse: userData?.closerToNatureResponse ?? undefined,
                 },
                 sessionCompleted: userData?.sessionCompleted ?? false,
+                testLinkClicked: !!userData?.testLinkClickedAt,
             }}
         >
         <main className="flex flex-col items-center justify-start w-full min-h-screen bg-[#f5f5f5] text-gray-900">
@@ -213,6 +216,19 @@ export default async function SessionSevenPage() {
                 </div>
             </section>
 
+            {/* Post-test Card */}
+            <TestLinkCard
+                testLinkCardTranslations={{
+                    cardTitle: t("additionalData.testLinkCard.posttest.cardTitle"),
+                    requiredLabel: t("additionalData.testLinkCard.requiredLabel"),
+                    actionButton: t("additionalData.testLinkCard.posttest.actionButton"),
+                    openedLabel: t("additionalData.testLinkCard.openedLabel"),
+                    unknownErrorMessage: t("additionalData.testLinkCard.unknownErrorMessage")
+                }}
+                url={POSTTEST_URL}
+                greentouchSessionId={dbSession?.id}
+            />
+
             {/* Session Completed Card */}
             <SessionCompletedCard 
                 sessionCompletedCardTranslations={{
@@ -228,6 +244,7 @@ export default async function SessionSevenPage() {
                     },
                     sessionIdMissingErrorMessage: t("additionalData.sessionCompletedCard.sessionIdMissingErrorMessage"),
                     notAllSectionsCompletedErrorMessage: t("additionalData.sessionCompletedCard.notAllSectionsCompletedErrorMessage"),
+                    testLinkNotOpenedErrorMessage: t("additionalData.sessionCompletedCard.testLinkNotOpenedErrorMessage"),
                     unknownErrorMessage: t("additionalData.sessionCompletedCard.unknownErrorMessage"),
                     successMessage: t("additionalData.sessionCompletedCard.successMessage")
                 }} 

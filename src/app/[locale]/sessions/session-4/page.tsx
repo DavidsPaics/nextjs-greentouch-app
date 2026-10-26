@@ -302,6 +302,7 @@ export default async function SessionFourPage() {
                     },
                     sessionIdMissingErrorMessage: t("additionalData.sessionCompletedCard.sessionIdMissingErrorMessage"),
                     notAllSectionsCompletedErrorMessage: t("additionalData.sessionCompletedCard.notAllSectionsCompletedErrorMessage"),
+                    testLinkNotOpenedErrorMessage: t("additionalData.sessionCompletedCard.testLinkNotOpenedErrorMessage"),
                     unknownErrorMessage: t("additionalData.sessionCompletedCard.unknownErrorMessage"),
                     successMessage: t("additionalData.sessionCompletedCard.successMessage")
                 }} 

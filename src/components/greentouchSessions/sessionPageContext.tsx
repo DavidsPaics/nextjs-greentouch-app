@@ -17,6 +17,7 @@ interface SessionPageInitialData {
   diaryEntry: string[] | null;
   surveyData: SurveyData;
   sessionCompleted: boolean;
+  testLinkClicked?: boolean;
 }
 
 interface SessionPageContextType {
@@ -31,6 +32,9 @@ interface SessionPageContextType {
 
   sessionCompleted: boolean;
   setSessionCompleted: (v: boolean) => void;
+
+  testLinkClicked: boolean;
+  setTestLinkClicked: (v: boolean) => void;
 }
 
 const SessionPageContext = createContext<SessionPageContextType | undefined>(undefined);
@@ -48,6 +52,7 @@ export function SessionPageProvider({
   const [diaryEntry, setDiaryEntry] = useState<string[] | null>(initialData.diaryEntry);
   const [surveyData, setSurveyData] = useState<SurveyData>(initialData.surveyData);
   const [sessionCompleted, setSessionCompleted] = useState<boolean>(initialData.sessionCompleted);
+  const [testLinkClicked, setTestLinkClicked] = useState<boolean>(initialData.testLinkClicked ?? false);
 
   return (
     <SessionPageContext.Provider value={{
@@ -62,6 +67,9 @@ export function SessionPageProvider({
 
       sessionCompleted,
       setSessionCompleted,
+
+      testLinkClicked,
+      setTestLinkClicked,
     }}>
       {children}
     </SessionPageContext.Provider>

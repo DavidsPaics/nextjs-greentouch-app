@@ -7,6 +7,7 @@ import { sessionIsCompleted } from "@/actions/greentouch-session-user-data";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Button } from "../ui/button";
 import { useSessionPage } from "./sessionPageContext";
+import { requiresTestLink } from "@/lib/test-links";
 
 interface SessionCompletedCardProps {
     sessionCompletedCardTranslations: {
@@ -22,6 +23,7 @@ interface SessionCompletedCardProps {
         };
         successMessage: string;
         notAllSectionsCompletedErrorMessage: string;
+        testLinkNotOpenedErrorMessage: string;
         unknownErrorMessage: string;
         sessionIdMissingErrorMessage: string;
     };
@@ -32,7 +34,7 @@ interface SessionCompletedCardProps {
 export default function SessionCompletedCard({ sessionCompletedCardTranslations, greentouchSessionId, greentouchSessionName }: SessionCompletedCardProps) {
 
     // 1) GLOBAL STATE from SessionPageContext
-    const { sessionCompleted, setSessionCompleted, natureConnectednessValue, diaryEntry, surveyData } = useSessionPage();
+    const { sessionCompleted, setSessionCompleted, natureConnectednessValue, diaryEntry, surveyData, testLinkClicked } = useSessionPage();
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -71,6 +73,12 @@ export default function SessionCompletedCard({ sessionCompletedCardTranslations,
                 toast.error(sessionCompletedCardTranslations.notAllSectionsCompletedErrorMessage);
                 return;
             }
+        }
+
+        // 3) Check that the pre-test / post-test has been opened
+        if (greentouchSessionName && requiresTestLink(greentouchSessionName) && !testLinkClicked) {
+            toast.error(sessionCompletedCardTranslations.testLinkNotOpenedErrorMessage);
+            return;
         }
 
         setIsLoading(true);

@@ -342,8 +342,22 @@
         },
         "sessionIdMissingErrorMessage": "O ID da sessão está em falta. Certifica-te de que a sessão já está disponível.",
         "notAllSectionsCompletedErrorMessage": "Por favor, complete todas as secções obrigatórias antes de marcar a sessão como concluída.",
+        "testLinkNotOpenedErrorMessage": "Por favor, abra o teste antes de marcar a sessão como concluída.",
         "unknownErrorMessage": "Ocorreu um erro ao marcar a sessão como concluída. Por favor, tente novamente.",
         "successMessage": "Sessão marcada como concluída com sucesso."
+      },
+      "testLinkCard": {
+        "requiredLabel": "Obrigatório para concluir",
+        "openedLabel": "Aberto",
+        "unknownErrorMessage": "Ocorreu um erro. Por favor, tente novamente.",
+        "pretest": {
+          "cardTitle": "Antes de mais, preencha o questionário!",
+          "actionButton": "Abrir pré-teste"
+        },
+        "posttest": {
+          "cardTitle": "Antes de concluir a sessão, por favor, preencha o questionário!",
+          "actionButton": "Abrir pós-teste"
+        }
       },
       "sessionsAccordion": {
         "accordionItem1": {

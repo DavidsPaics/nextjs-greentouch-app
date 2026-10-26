@@ -342,8 +342,22 @@
         },
         "sessionIdMissingErrorMessage": "Trūkst sesijas ID. Pārliecinieties, vai sesija jau ir pieejama.",
         "notAllSectionsCompletedErrorMessage": "Lūdzu, aizpildiet visas nepieciešamās sadaļas, pirms atzīmējiet sesiju kā pabeigtu.",
+        "testLinkNotOpenedErrorMessage": "Lūdzu, atveriet testu, pirms atzīmējat sesiju kā pabeigtu.",
         "unknownErrorMessage": "Atzīmējot sesiju kā pabeigtu, radās kļūda. Lūdzu, mēģiniet vēlreiz.",
         "successMessage": "Sesija, kas atzīmēta kā veiksmīgi pabeigta."
+      },
+      "testLinkCard": {
+        "requiredLabel": "Nepieciešams izpildīt",
+        "openedLabel": "Atvērts",
+        "unknownErrorMessage": "Radās kļūda. Lūdzu, mēģiniet vēlreiz.",
+        "pretest": {
+          "cardTitle": "Vispirms, lūdzu, aizpildi aptauju!",
+          "actionButton": "Atvērt pirmstestu"
+        },
+        "posttest": {
+          "cardTitle": "Pirms sesijas pabeigšanas, lūdzu, aizpildi aptauju!",
+          "actionButton": "Atvērt pēctestu"
+        }
       },
       "sessionsAccordion": {
         "accordionItem1": {
