@@ -5,6 +5,8 @@ import { nextCookies } from "better-auth/next-js";
 import { admin } from "better-auth/plugins"
 import { APIError, createAuthMiddleware } from "better-auth/api";
 import { passwordSchema } from "./validation";
+import { sendEmail } from "./email";
+import { buildResetPasswordEmail, getRequestLocale } from "./reset-password-email";
 
 export const auth = betterAuth({
     session: {
@@ -46,15 +48,32 @@ export const auth = betterAuth({
       }
     },
     emailAndPassword: {
-      enabled: true, 
+      enabled: true,
+      revokeSessionsOnPasswordReset: true,
+      sendResetPassword: async ({ user, url }, request) => {
+        const locale = getRequestLocale(request);
+        // Not awaited, so the response doesn't reveal whether the account exists (or fail if SMTP is down)
+        buildResetPasswordEmail(locale, user.name, url)
+          .then((email) => sendEmail({ to: user.email, ...email }))
+          .catch((error) => console.error("Error sending password reset email:", error));
+      },
+    },
+    rateLimit: {
+      customRules: {
+        "/request-password-reset": { window: 60, max: 3 }, // max 3 reset emails per minute per IP
+      },
     },
     database: prismaAdapter(prisma, {
         provider: "postgresql", // or "mysql", "postgresql", ...etc
     }),
     hooks: {
       before: createAuthMiddleware(async ctx => {
-        if (ctx.path === "/sign-up/email") {
-          const password = ctx.body.password;
+        const password = ctx.path === "/sign-up/email"
+          ? ctx.body.password
+          : ctx.path === "/reset-password" || ctx.path === "/change-password"
+            ? ctx.body.newPassword
+            : undefined;
+        if (password !== undefined) {
           const { error } = passwordSchema({
             passwordRequired: "Password is required",
             passwordMinLength: "Password is too short",

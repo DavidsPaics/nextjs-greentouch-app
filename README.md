@@ -82,6 +82,28 @@ For production deployments, this should match the public URL of your application
 
 ---
 
+#### Email (SMTP)
+
+The application sends emails (currently only password reset links) through any SMTP server:
+
+```env
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_SECURE=false        # true only for port 465
+SMTP_USER=
+SMTP_PASSWORD=
+SMTP_FROM="GreenTouch <noreply@example.com>"
+```
+
+Examples:
+
+* **Resend** – `SMTP_HOST=smtp.resend.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_USER=resend`, `SMTP_PASSWORD=<API key>`. The `SMTP_FROM` address must be on a domain verified in Resend.
+* **Gmail** – `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_USER=<gmail address>`, `SMTP_PASSWORD=<app password>` (requires 2-step verification on the Google account).
+
+If `SMTP_HOST` is not set (e.g. in local development), emails are not sent. Instead, their content, including the password reset link, is printed to the server console.
+
+---
+
 ## Running the Application with Docker 🐋
 
 `docker compose` starts everything the app needs:

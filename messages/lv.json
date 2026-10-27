@@ -32,7 +32,6 @@
   },
   "signInPage": {
     "title": "Ievadiet sava konta informāciju un sāciet izpēti!",
-    "disclaimer": "Paroles nozaudēšanas gadījumā, lūdzu, sazinieties ar servera administratoru, lai saņemtu palīdzību.",
     "alreadySignedIn": {
       "title": "Jūs jau esat pierakstījies",
       "description": "Ja vēlaties mainīt kontu, lūdzu, vispirms izrakstieties."
@@ -43,12 +42,58 @@
       "buttonSignIn": "Pieteikties",
       "noAccountText": "Jums nav konta?",
       "signUpLink": "Reģistrēties",
+      "forgotPasswordLink": "Aizmirsāt paroli?",
+      "passwordResetSuccess": "Jūsu parole ir nomainīta. Tagad varat pierakstīties ar jauno paroli.",
       "formMessages": {
         "validEmailRequired": "Lūdzu, ievadiet derīgu e-pasta adresi.",
         "invalidCredentials": "Nepareizs e-pasts vai parole.",
         "passwordRequired": "Parole ir nepieciešama.",
         "unknownError": "Kaut kas nogāja greizi."
       }
+    }
+  },
+  "forgotPasswordPage": {
+    "title": "Paroles atiestatīšana",
+    "description": "Ievadiet sava konta e-pasta adresi, un mēs nosūtīsim saiti paroles atiestatīšanai.",
+    "form": {
+      "labelEmail": "E-pasts",
+      "buttonSend": "Nosūtīt saiti",
+      "backToSignIn": "Atpakaļ uz pierakstīšanos",
+      "successMessage": "Ja konts ar šo e-pasta adresi pastāv, mēs uz to nosūtījām paroles atiestatīšanas saiti.",
+      "formMessages": {
+        "validEmailRequired": "Lūdzu, ievadiet derīgu e-pasta adresi.",
+        "tooManyRequests": "Pārāk daudz pieprasījumu. Lūdzu, uzgaidiet minūti un mēģiniet vēlreiz.",
+        "unknownError": "Radās kļūda. Lūdzu, mēģiniet vēlreiz."
+      }
+    }
+  },
+  "resetPasswordPage": {
+    "title": "Izvēlieties jaunu paroli",
+    "description": "Ievadiet savu jauno paroli.",
+    "form": {
+      "labelNewPassword": "Jaunā parole",
+      "labelConfirmPassword": "Apstipriniet jauno paroli",
+      "buttonReset": "Mainīt paroli",
+      "formMessages": {
+        "invalidLink": "Šī saite vairs nav derīga. Lūdzu, pieprasiet jaunu.",
+        "unknownError": "Radās kļūda. Lūdzu, mēģiniet vēlreiz."
+      }
+    },
+    "invalidLink": {
+      "title": "Saite nav derīga vai tās derīguma termiņš ir beidzies",
+      "description": "Paroles atiestatīšanas saiti var izmantot tikai vienu reizi, un tā ir derīga 1 stundu. Lūdzu, pieprasiet jaunu saiti.",
+      "button": "Pieprasīt jaunu saiti"
+    }
+  },
+  "emails": {
+    "resetPassword": {
+      "subject": "GreenTouch paroles atiestatīšana",
+      "greeting": "Sveiki, {name}!",
+      "body": "Saņēmām pieprasījumu atiestatīt jūsu GreenTouch konta paroli. Noklikšķiniet uz pogas zemāk, lai izvēlētos jaunu paroli.",
+      "button": "Atiestatīt paroli",
+      "expiry": "Šī saite ir derīga 1 stundu.",
+      "ignore": "Ja jūs nepieprasījāt paroles atiestatīšanu, varat šo e-pastu ignorēt. Jūsu parole netiks mainīta.",
+      "linkFallback": "Ja poga nedarbojas, iekopējiet šo saiti pārlūkprogrammā:"
     }
   },
   "signUpPage": {
@@ -153,6 +198,19 @@
       }
     },
     "securityPage": {
+      "changePasswordCard": {
+        "cardTitle": "Paroles maiņa",
+        "cardDescription": "Nomainiet paroli, ar kuru pierakstāties. Pēc maiņas citās ierīcēs būs jāpierakstās no jauna.",
+        "labelCurrentPassword": "Pašreizējā parole",
+        "labelNewPassword": "Jaunā parole",
+        "labelConfirmPassword": "Apstipriniet jauno paroli",
+        "button": "Mainīt paroli",
+        "successMessage": "Parole ir nomainīta.",
+        "currentPasswordRequired": "Pašreizējā parole ir obligāta.",
+        "invalidCurrentPassword": "Pašreizējā parole nav pareiza.",
+        "tooManyRequests": "Pārāk daudz mēģinājumu. Lūdzu, uzgaidiet un mēģiniet vēlreiz.",
+        "unknownError": "Radās kļūda. Lūdzu, mēģiniet vēlreiz."
+      },
       "description": "Pārvaldiet sesijas drošību. Aktīvās sesijas citās ierīcēs varat atsaukt šeit.",
       "cardTitle": "Citu sesiju atsaukšana",
       "cardDescription": "Izrakstieties no visām pārējām aktīvajām sesijām, lai saglabātu konta drošību.",

@@ -32,7 +32,6 @@
   },
   "signInPage": {
     "title": "Introduza os dados da sua conta e comece a explorar",
-    "disclaimer": "Caso perca a sua palavra-passe, por favor contacte o administrador do servidor para obter assistência.",
     "alreadySignedIn": {
       "title": "Já iniciou sessão",
       "description": "Se quiser mudar de conta, termine a sessão primeiro."
@@ -43,12 +42,58 @@
       "buttonSignIn": "Iniciar sessão",
       "noAccountText": "Não tem conta?",
       "signUpLink": "Registar-me",
+      "forgotPasswordLink": "Esqueceu-se da palavra-passe?",
+      "passwordResetSuccess": "A sua palavra-passe foi alterada. Já pode iniciar sessão com a nova palavra-passe.",
       "formMessages": {
         "validEmailRequired": "Por favor, introduza um endereço de email válido.",
         "invalidCredentials": "Email ou palavra-passe inválidos.",
         "passwordRequired": "É necessária palavra-passe.",
         "unknownError": "Algo correu mal."
       }
+    }
+  },
+  "forgotPasswordPage": {
+    "title": "Repor a palavra-passe",
+    "description": "Introduza o endereço de email da sua conta e enviaremos uma ligação para repor a palavra-passe.",
+    "form": {
+      "labelEmail": "Email",
+      "buttonSend": "Enviar ligação",
+      "backToSignIn": "Voltar ao início de sessão",
+      "successMessage": "Se existir uma conta com este email, enviámos para ela uma ligação para repor a palavra-passe.",
+      "formMessages": {
+        "validEmailRequired": "Por favor, introduza um endereço de email válido.",
+        "tooManyRequests": "Demasiados pedidos. Aguarde um minuto e tente novamente.",
+        "unknownError": "Ocorreu um erro. Por favor, tente novamente."
+      }
+    }
+  },
+  "resetPasswordPage": {
+    "title": "Escolha uma nova palavra-passe",
+    "description": "Introduza a sua nova palavra-passe abaixo.",
+    "form": {
+      "labelNewPassword": "Nova palavra-passe",
+      "labelConfirmPassword": "Confirmar nova palavra-passe",
+      "buttonReset": "Alterar palavra-passe",
+      "formMessages": {
+        "invalidLink": "Esta ligação já não é válida. Peça uma nova.",
+        "unknownError": "Ocorreu um erro. Por favor, tente novamente."
+      }
+    },
+    "invalidLink": {
+      "title": "Esta ligação é inválida ou expirou",
+      "description": "As ligações para repor a palavra-passe só podem ser usadas uma vez e são válidas durante 1 hora. Peça uma nova ligação.",
+      "button": "Pedir nova ligação"
+    }
+  },
+  "emails": {
+    "resetPassword": {
+      "subject": "Repor a sua palavra-passe do GreenTouch",
+      "greeting": "Olá {name},",
+      "body": "Recebemos um pedido para repor a palavra-passe da sua conta GreenTouch. Clique no botão abaixo para escolher uma nova palavra-passe.",
+      "button": "Repor palavra-passe",
+      "expiry": "Esta ligação é válida durante 1 hora.",
+      "ignore": "Se não pediu para repor a palavra-passe, pode ignorar este email. A sua palavra-passe não será alterada.",
+      "linkFallback": "Se o botão não funcionar, copie esta ligação para o seu navegador:"
     }
   },
   "signUpPage": {
@@ -153,6 +198,19 @@
       }
     },
     "securityPage": {
+      "changePasswordCard": {
+        "cardTitle": "Alterar Palavra-passe",
+        "cardDescription": "Altere a palavra-passe que usa para iniciar sessão. Terá de iniciar sessão novamente nos outros dispositivos.",
+        "labelCurrentPassword": "Palavra-passe atual",
+        "labelNewPassword": "Nova palavra-passe",
+        "labelConfirmPassword": "Confirmar nova palavra-passe",
+        "button": "Alterar palavra-passe",
+        "successMessage": "A palavra-passe foi alterada.",
+        "currentPasswordRequired": "A palavra-passe atual é obrigatória.",
+        "invalidCurrentPassword": "A palavra-passe atual está incorreta.",
+        "tooManyRequests": "Demasiadas tentativas. Aguarde e tente novamente.",
+        "unknownError": "Ocorreu um erro. Por favor, tente novamente."
+      },
       "description": "Gira a segurança da sua sessão. Pode revogar sessões ativas noutros dispositivos aqui.",
       "cardTitle": "Revogar Outras Sessões",
       "cardDescription": "Desligue todas as outras sessões ativas para manter a sua conta segura.",

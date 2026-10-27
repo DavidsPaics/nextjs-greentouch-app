@@ -30,6 +30,8 @@ interface SignInFormProps {
         buttonSignIn: string;
         noAccountText: string;
         signUpLink: string;
+        forgotPasswordLink: string;
+        passwordResetSuccess: string;
         formMessages: {
             validEmailRequired: string;
             invalidCredentials: string;
@@ -37,9 +39,10 @@ interface SignInFormProps {
             unknownError: string;
 	    };
     };
+    showPasswordResetSuccess?: boolean;
 }
 
-export function SignInForm({ signInFormTranslations }: SignInFormProps) {
+export function SignInForm({ signInFormTranslations, showPasswordResetSuccess }: SignInFormProps) {
 
     const formSchema = z.object({
         email: z.email({
@@ -85,6 +88,11 @@ export function SignInForm({ signInFormTranslations }: SignInFormProps) {
     return (
         <Card className="w-full max-w-md">
         <CardContent className="space-y-6 pt-6">
+            {showPasswordResetSuccess && (
+                <div role="status" className="rounded-md bg-green-50 px-4 py-3 text-sm text-green-800">
+                    {signInFormTranslations.passwordResetSuccess}
+                </div>
+            )}
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField
@@ -116,6 +124,11 @@ export function SignInForm({ signInFormTranslations }: SignInFormProps) {
                         </div>
                     </FormControl>
                     <FormMessage className="min-h-[20px]" />
+                    <div className="flex justify-end">
+                        <Link href="/forgot-password" className="text-sm text-muted-foreground underline">
+                            {signInFormTranslations.forgotPasswordLink}
+                        </Link>
+                    </div>
                     </FormItem>
                 )}
                 />

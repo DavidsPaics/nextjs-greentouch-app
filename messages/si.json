@@ -32,7 +32,6 @@
   },
   "signInPage": {
     "title": "Vnesite podatke svojega računa in začnite raziskovati",
-    "disclaimer": "V primeru izgube gesla se obrnite na skrbnika strežnika za pomoč.",
     "alreadySignedIn": {
       "title": "Že ste prijavljeni",
       "description": "Če želite zamenjati račun, se najprej odjavite."
@@ -43,12 +42,58 @@
       "buttonSignIn": "Prijava",
       "noAccountText": "Nimate računa?",
       "signUpLink": "Registriraj se",
+      "forgotPasswordLink": "Ste pozabili geslo?",
+      "passwordResetSuccess": "Vaše geslo je bilo spremenjeno. Zdaj se lahko prijavite z novim geslom.",
       "formMessages": {
         "validEmailRequired": "Prosimo, vnesite veljaven e-poštni naslov.",
         "invalidCredentials": "Napačen e-poštni naslov ali geslo.",
         "passwordRequired": "Geslo je obvezno.",
         "unknownError": "Nekaj je šlo narobe."
       }
+    }
+  },
+  "forgotPasswordPage": {
+    "title": "Ponastavitev gesla",
+    "description": "Vnesite e-poštni naslov svojega računa in poslali vam bomo povezavo za ponastavitev gesla.",
+    "form": {
+      "labelEmail": "E-pošta",
+      "buttonSend": "Pošlji povezavo",
+      "backToSignIn": "Nazaj na prijavo",
+      "successMessage": "Če račun s tem e-poštnim naslovom obstaja, smo nanj poslali povezavo za ponastavitev gesla.",
+      "formMessages": {
+        "validEmailRequired": "Prosimo, vnesite veljaven e-poštni naslov.",
+        "tooManyRequests": "Preveč zahtev. Počakajte minuto in poskusite znova.",
+        "unknownError": "Prišlo je do napake. Poskusite znova."
+      }
+    }
+  },
+  "resetPasswordPage": {
+    "title": "Izberite novo geslo",
+    "description": "Spodaj vnesite novo geslo.",
+    "form": {
+      "labelNewPassword": "Novo geslo",
+      "labelConfirmPassword": "Potrdite novo geslo",
+      "buttonReset": "Spremeni geslo",
+      "formMessages": {
+        "invalidLink": "Ta povezava ni več veljavna. Zahtevajte novo.",
+        "unknownError": "Prišlo je do napake. Poskusite znova."
+      }
+    },
+    "invalidLink": {
+      "title": "Povezava ni veljavna ali je potekla",
+      "description": "Povezavo za ponastavitev gesla lahko uporabite samo enkrat in velja 1 uro. Zahtevajte novo povezavo.",
+      "button": "Zahtevaj novo povezavo"
+    }
+  },
+  "emails": {
+    "resetPassword": {
+      "subject": "Ponastavitev gesla za GreenTouch",
+      "greeting": "Pozdravljeni, {name}!",
+      "body": "Prejeli smo zahtevo za ponastavitev gesla za vaš račun GreenTouch. Kliknite spodnji gumb, da izberete novo geslo.",
+      "button": "Ponastavi geslo",
+      "expiry": "Ta povezava velja 1 uro.",
+      "ignore": "Če ponastavitve gesla niste zahtevali, lahko to sporočilo prezrete. Vaše geslo se ne bo spremenilo.",
+      "linkFallback": "Če gumb ne deluje, kopirajte to povezavo v brskalnik:"
     }
   },
   "signUpPage": {
@@ -153,6 +198,19 @@
       }
     },
     "securityPage": {
+      "changePasswordCard": {
+        "cardTitle": "Spremeni geslo",
+        "cardDescription": "Spremenite geslo, s katerim se prijavljate. Na drugih napravah se boste morali ponovno prijaviti.",
+        "labelCurrentPassword": "Trenutno geslo",
+        "labelNewPassword": "Novo geslo",
+        "labelConfirmPassword": "Potrdite novo geslo",
+        "button": "Spremeni geslo",
+        "successMessage": "Geslo je bilo spremenjeno.",
+        "currentPasswordRequired": "Trenutno geslo je obvezno.",
+        "invalidCurrentPassword": "Trenutno geslo ni pravilno.",
+        "tooManyRequests": "Preveč poskusov. Počakajte in poskusite znova.",
+        "unknownError": "Prišlo je do napake. Poskusite znova."
+      },
       "description": "Upravljajte varnost svojih sej. Tukaj lahko prekličete aktivne seje na drugih napravah.",
       "cardTitle": "Prekliči druge seje",
       "cardDescription": "Odjavite se iz vseh drugih aktivnih sej, da bo vaš račun varen.",

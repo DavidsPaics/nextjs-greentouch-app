@@ -32,7 +32,6 @@
   },
   "signInPage": {
     "title": "Enter your account details and start exploring",
-    "disclaimer": "In case of losing your password, please contact the server administrator for assistance.",
     "alreadySignedIn": {
       "title": "You are already signed in",
       "description": "If you want to switch accounts, please sign out first."
@@ -43,12 +42,58 @@
       "buttonSignIn": "Sign In",
       "noAccountText": "Don't have an account?",
       "signUpLink": "Sign up",
+      "forgotPasswordLink": "Forgot password?",
+      "passwordResetSuccess": "Your password has been changed. You can now sign in with your new password.",
       "formMessages": {
         "validEmailRequired": "Please enter a valid email address.",
         "invalidCredentials": "Invalid email or password.",
         "passwordRequired": "Password is required.",
         "unknownError": "Something went wrong."
       }
+    }
+  },
+  "forgotPasswordPage": {
+    "title": "Reset your password",
+    "description": "Enter the email address of your account and we'll send you a link to reset your password.",
+    "form": {
+      "labelEmail": "Email",
+      "buttonSend": "Send reset link",
+      "backToSignIn": "Back to sign in",
+      "successMessage": "If an account with this email exists, we've sent a password reset link to it.",
+      "formMessages": {
+        "validEmailRequired": "Please enter a valid email address.",
+        "tooManyRequests": "Too many requests. Please wait a minute and try again.",
+        "unknownError": "Something went wrong. Please try again."
+      }
+    }
+  },
+  "resetPasswordPage": {
+    "title": "Choose a new password",
+    "description": "Enter your new password below.",
+    "form": {
+      "labelNewPassword": "New password",
+      "labelConfirmPassword": "Confirm new password",
+      "buttonReset": "Change password",
+      "formMessages": {
+        "invalidLink": "This link is no longer valid. Please request a new one.",
+        "unknownError": "Something went wrong. Please try again."
+      }
+    },
+    "invalidLink": {
+      "title": "This link is invalid or has expired",
+      "description": "Password reset links can only be used once and are valid for 1 hour. Please request a new link.",
+      "button": "Request a new link"
+    }
+  },
+  "emails": {
+    "resetPassword": {
+      "subject": "Reset your GreenTouch password",
+      "greeting": "Hi {name},",
+      "body": "We received a request to reset the password for your GreenTouch account. Click the button below to choose a new password.",
+      "button": "Reset password",
+      "expiry": "This link is valid for 1 hour.",
+      "ignore": "If you didn't request a password reset, you can safely ignore this email. Your password will not change.",
+      "linkFallback": "If the button doesn't work, copy this link into your browser:"
     }
   },
   "signUpPage": {
@@ -153,6 +198,19 @@
       }
     },
     "securityPage": {
+      "changePasswordCard": {
+        "cardTitle": "Change Password",
+        "cardDescription": "Change the password you use to sign in. You will need to sign in again on your other devices.",
+        "labelCurrentPassword": "Current password",
+        "labelNewPassword": "New password",
+        "labelConfirmPassword": "Confirm new password",
+        "button": "Change password",
+        "successMessage": "Your password has been changed.",
+        "currentPasswordRequired": "Current password is required.",
+        "invalidCurrentPassword": "Current password is incorrect.",
+        "tooManyRequests": "Too many attempts. Please wait and try again.",
+        "unknownError": "Something went wrong. Please try again."
+      },
       "description": "Manage your session security. You can revoke active sessions on other devices here.",
       "cardTitle": "Revoke Other Sessions",
       "cardDescription": "Sign out all other active sessions to keep your account safe.",

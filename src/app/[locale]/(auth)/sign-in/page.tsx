@@ -9,7 +9,9 @@ export const metadata: Metadata = {
   title: "Sign in",
 };
 
-export default async function SignInPage() {
+export default async function SignInPage({ searchParams }: { searchParams: Promise<{ reset?: string }> }) {
+
+	const { reset } = await searchParams;
 
 	//console.log("Sign in Page rendered");
 
@@ -43,6 +45,8 @@ export default async function SignInPage() {
 										buttonSignIn: t("signInForm.buttonSignIn"),
 										noAccountText: t("signInForm.noAccountText"),
 										signUpLink: t("signInForm.signUpLink"),
+										forgotPasswordLink: t("signInForm.forgotPasswordLink"),
+										passwordResetSuccess: t("signInForm.passwordResetSuccess"),
 										formMessages: {
 											validEmailRequired: t("signInForm.formMessages.validEmailRequired"),
 											invalidCredentials: t("signInForm.formMessages.invalidCredentials"),
@@ -50,11 +54,8 @@ export default async function SignInPage() {
 											unknownError: t("signInForm.formMessages.unknownError")
 										}
 									}}
+									showPasswordResetSuccess={reset === "success"}
 								/>
-
-							<p className="mt-6 text-xs text-muted-foreground max-w-md mx-auto lg:mx-0 text-center lg:text-left">
-								{t("disclaimer")}
-							</p>
 						</div>
 					</div>
 				</section>
