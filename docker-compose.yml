@@ -27,7 +27,7 @@ services:
     command: sh -c "npx prisma migrate deploy && node prisma/seed-admin.mjs"
     environment:
       DATABASE_URL: *database-url
-      # defaults are in prisma/seed-admin.mjs
+      # admin account is only created when ADMIN_EMAIL and ADMIN_PASSWORD are set
       ADMIN_EMAIL: ${ADMIN_EMAIL:-}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
       ADMIN_NAME: ${ADMIN_NAME:-}

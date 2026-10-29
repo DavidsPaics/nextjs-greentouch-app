@@ -120,16 +120,16 @@ POSTGRES_USER=greentouch
 POSTGRES_PASSWORD=greentouch
 POSTGRES_DB=greentouch
 
-# Default admin account, created on first start (defaults shown)
-ADMIN_EMAIL=greentouchtool@gmail.com
-ADMIN_PASSWORD=Greentouch001!!
-ADMIN_NAME=GreenTouch Admin
+# Admin account, created on start if both ADMIN_EMAIL and ADMIN_PASSWORD are set
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=<choose a strong password>
+ADMIN_NAME=GreenTouch Admin   # optional
 
 # Time zone used for dates shown by the server
 TZ=Europe/Riga
 ```
 
-The admin account is only created if it doesn't exist yet. Changing `ADMIN_PASSWORD` later does not change the password of an existing account.
+There is no default admin account: if `ADMIN_EMAIL` or `ADMIN_PASSWORD` is missing, no admin is created. The account is only created if it doesn't exist yet. Changing `ADMIN_PASSWORD` later does not change the password of an existing account.
 
 ### Build and start
 

@@ -5,9 +5,14 @@ import { PrismaClient } from "@prisma/client";
 import { hashPassword } from "better-auth/crypto";
 import { randomUUID } from "node:crypto";
 
-const email = (process.env.ADMIN_EMAIL || "greentouchtool@gmail.com").trim().toLowerCase();
-const password = process.env.ADMIN_PASSWORD || "Greentouch001!!";
+const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+const password = process.env.ADMIN_PASSWORD;
 const name = process.env.ADMIN_NAME || "GreenTouch Admin";
+
+if (!email || !password) {
+    console.log("ADMIN_EMAIL or ADMIN_PASSWORD not set, skipping admin account setup");
+    process.exit(0);
+}
 
 const prisma = new PrismaClient();
 
