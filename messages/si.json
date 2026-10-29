@@ -55,6 +55,7 @@
   "forgotPasswordPage": {
     "title": "Ponastavitev gesla",
     "description": "Vnesite e-poštni naslov svojega računa in poslali vam bomo povezavo za ponastavitev gesla.",
+    "unavailable": "Ponastavitev gesla je iz tehničnih razlogov začasno nedosegljiva.",
     "form": {
       "labelEmail": "E-pošta",
       "buttonSend": "Pošlji povezavo",

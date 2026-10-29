@@ -1,4 +1,4 @@
-// Creates the default admin account (email/password login) if it doesn't exist yet.
+// Creates the admin account (email/password login) from ADMIN_EMAIL / ADMIN_PASSWORD if it doesn't exist yet.
 // Safe to run on every start: an existing account only gets its role set to admin,
 // its password is never overwritten.
 import { PrismaClient } from "@prisma/client";

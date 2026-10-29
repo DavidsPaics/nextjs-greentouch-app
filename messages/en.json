@@ -55,6 +55,7 @@
   "forgotPasswordPage": {
     "title": "Reset your password",
     "description": "Enter the email address of your account and we'll send you a link to reset your password.",
+    "unavailable": "Password reset is temporarily unavailable for technical reasons.",
     "form": {
       "labelEmail": "Email",
       "buttonSend": "Send reset link",

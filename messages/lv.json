@@ -55,6 +55,7 @@
   "forgotPasswordPage": {
     "title": "Paroles atiestatīšana",
     "description": "Ievadiet sava konta e-pasta adresi, un mēs nosūtīsim saiti paroles atiestatīšanai.",
+    "unavailable": "Paroles atiestatīšana tehnisku iemeslu dēļ īslaicīgi nav pieejama.",
     "form": {
       "labelEmail": "E-pasts",
       "buttonSend": "Nosūtīt saiti",

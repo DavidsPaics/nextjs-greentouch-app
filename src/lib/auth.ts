@@ -68,6 +68,11 @@ export const auth = betterAuth({
     }),
     hooks: {
       before: createAuthMiddleware(async ctx => {
+        // Without SMTP the reset email can't be sent, so password reset is disabled
+        if (ctx.path === "/request-password-reset" && !process.env.SMTP_HOST) {
+          throw new APIError("SERVICE_UNAVAILABLE", { message: "Password reset is temporarily unavailable." });
+        }
+
         const password = ctx.path === "/sign-up/email"
           ? ctx.body.password
           : ctx.path === "/reset-password" || ctx.path === "/change-password"

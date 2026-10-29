@@ -100,7 +100,7 @@ Examples:
 * **Resend** – `SMTP_HOST=smtp.resend.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_USER=resend`, `SMTP_PASSWORD=<API key>`. The `SMTP_FROM` address must be on a domain verified in Resend.
 * **Gmail** – `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_USER=<gmail address>`, `SMTP_PASSWORD=<app password>` (requires 2-step verification on the Google account).
 
-If `SMTP_HOST` is not set (e.g. in local development), emails are not sent. Instead, their content, including the password reset link, is printed to the server console.
+If `SMTP_HOST` is not set, password reset is disabled: the "Forgot password?" page shows a "temporarily unavailable" message and reset requests are refused. Changing the password while signed in (Account → Security) still works.
 
 ---
 
@@ -109,7 +109,7 @@ If `SMTP_HOST` is not set (e.g. in local development), emails are not sent. Inst
 `docker compose` starts everything the app needs:
 
 - **db** – a PostgreSQL database (data is kept in the `db-data` volume)
-- **migrate** – applies database migrations and creates the default admin account, then exits
+- **migrate** – applies database migrations and creates the admin account, then exits
 - **nextapp** – the application, started once `migrate` has finished
 
 With Docker, `DATABASE_URL` is set automatically, so `.env` only needs `BETTER_AUTH_SECRET` and `BETTER_AUTH_URL`. The following optional variables can also be set in `.env`:

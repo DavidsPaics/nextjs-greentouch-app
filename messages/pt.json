@@ -55,6 +55,7 @@
   "forgotPasswordPage": {
     "title": "Repor a palavra-passe",
     "description": "Introduza o endereço de email da sua conta e enviaremos uma ligação para repor a palavra-passe.",
+    "unavailable": "A reposição da palavra-passe está temporariamente indisponível por motivos técnicos.",
     "form": {
       "labelEmail": "Email",
       "buttonSend": "Enviar ligação",
